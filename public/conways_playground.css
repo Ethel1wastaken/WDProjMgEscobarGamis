@@ -17,6 +17,7 @@
     height: 15px;
     background-color: white;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 .alive {

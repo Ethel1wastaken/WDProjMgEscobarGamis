@@ -4,6 +4,7 @@ import { pentomino } from "./patterns/pentomino.js";
 import { renderGrid } from "./renderGrid.js";
 import { nextGeneration } from "./nextGeneration.js";
 import { gosper } from "./patterns/gosper.js";
+import { blank } from "./patterns/blank.js";
 
 function mainLoop() {
     renderGrid(state);
@@ -23,7 +24,7 @@ function clearState(state) {
 }
 
 function resetState() {
-    let newState = gosper;
+    let newState = blank;
     return newState;
 }
 
@@ -56,3 +57,7 @@ document.getElementById("clear").onclick = function() {
     renderGrid(state);
 }
 
+document.getElementById("next").onclick = function() {
+    state = nextGeneration(state);
+    renderGrid(state);
+}
