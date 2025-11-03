@@ -1,6 +1,6 @@
 # Immediate TODO
-- [] Make infinite grid
-- [] Allow clickable grid
+- [] Make infinite grid using a canvas
+- [] Improve clickable grid (click and drag)
 - [] Improve button functionality
 - [] Add generation/population tracker
 
