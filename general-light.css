@@ -1,0 +1,29 @@
+section {
+    padding: 0 70px;
+}
+
+.navbar {
+    height: 20vh;
+    background-color: #39a7e5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+}
+
+#siteLogo {
+    float: left
+}
+
+.navbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#createButton, #exploreButton, #accountsButton {
+    margin: 30px;
+}
