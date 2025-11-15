@@ -1,30 +1,47 @@
-section {
-    padding: 0 70px;
+* {
+    background-color: #ffd9ad;
 }
 
 .navbar {
     height: 20vh;
     background-color: #39a7e5;
     position: sticky;
-    overflow: 0;
+    top: 0;
+    overflow: hidden;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar * {
+    background-color: #39a7e5;
 }
 
 #siteLogo {
     float: left;
     width: 50%;
-    padding-left: 20px;
-}
-
-div#accountsButton {
-    margin-right: 20px;
-    text-align: right;
 }
 
 .navbuttons {
-    width: 50%;
-    float: right;
+    width: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#accountsButton {
+    width: 25%;
+}
+
+button:hover {
+    background-color:aquamarine
+}
+
+a:hover {
+    background-color: aquamarine;
+}
+
+section {
+    padding: 0 70px;
 }
