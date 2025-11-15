@@ -5,25 +5,26 @@ section {
 .navbar {
     height: 20vh;
     background-color: #39a7e5;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     position: sticky;
-    overflow: hidden;
-    top: 0;
+    overflow: 0;
 }
 
 #siteLogo {
-    float: left
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+}
+
+div#accountsButton {
+    margin-right: 20px;
+    text-align: right;
 }
 
 .navbuttons {
+    width: 50%;
+    float: right;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-}
-
-#createButton, #exploreButton, #accountsButton {
-    margin: 30px;
 }
