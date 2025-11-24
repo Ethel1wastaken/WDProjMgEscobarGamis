@@ -20,6 +20,7 @@
 #siteLogo {
     float: left;
     width: 50%;
+    margin: 40px;
 }
 
 .navbuttons {
@@ -32,6 +33,7 @@
 
 #accountsButton {
     width: 25%;
+    position: fixed;
 }
 
 button:hover {
