@@ -7,10 +7,6 @@ aka joanna escobar's traschan while debugging
     border-style: none;
 }
 
-<div class="dropdown-content"> 
-    <input type="checkbox" id="backpackButton" value="#"><label for="#"> Lifeform Backpack </label><br>
-    <input type="checkbox" id="projectButton" value="#"><label for="#"> Projects </label><br>
-
 ## 11.14.25
 .navbar {
     height: 20vh;
