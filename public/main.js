@@ -50,7 +50,7 @@ document.getElementById("start").onclick = function() {
 document.getElementById("reset").onclick = function() {
     state = resetState();
     renderGrid(state);
-}
+} 
 
 document.getElementById("clear").onclick = function() {
     state = clearState(state);
