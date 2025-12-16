@@ -24,7 +24,7 @@ function clearState(state) {
 }
 
 function resetState() {
-    let newState = pulsar;
+    let newState = blank;
     return newState;
 }
 
