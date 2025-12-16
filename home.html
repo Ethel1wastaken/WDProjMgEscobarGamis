@@ -9,7 +9,9 @@
 
         <title> Conway's Playground </title>
         <link rel = "icon" href= "./assets/temporary-logo-turtle.png" type="image/png">
-        <link rel="stylesheet" href="styles.css"> 
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="dropdown.css">
+        <script src="dropdown.js" defer></script>
     </head>
 
     <body>
@@ -20,16 +22,16 @@
                         <a href="home.html"> <img src="./assets/temporary-logo-turtle.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"> Conway's Playground </a>
                     </div>
                     
-                    <div class ="navbuttons">
-                        <button id="createButton"> Create </button>
-                            <div class="dropdown-content"> 
-                                <input type="checkbox" id="backpackButton" value="#"><label for="#"> Lifeform Backpack </label><br>
-                                <input type="checkbox" id="projectButton" value="#"><label for="#"> Projects </label><br>
-                            </div>
-
-                        <div>
-                            <a href="#" id="exploreButton"> Explore </a>
-                        </div>  
+                    <div class="dropdown">
+                        <div class="select">
+                            <span class="selected">Create</span>
+                            <div class="caret"></div>
+                         </div>
+                        <ul class="menu">
+                            <li><a href="public/index.html">Maker</a></li>
+                            <li><a href="#">Backpack</a></li>
+                            <li><a href="#">Projects</a></li>
+                        </ul>
                     </div>
 
                     <div id="accountsButton">
