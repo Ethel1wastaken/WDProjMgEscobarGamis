@@ -1,5 +1,5 @@
 export const blank = [];
 
 for(let i = 0; i<100;i++){
-    blank.push(new Array(200).fill(0));
+    blank.push(new Array(100).fill(0));
 }
