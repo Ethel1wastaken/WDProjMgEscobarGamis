@@ -17,8 +17,8 @@ const viewportTransform = {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.setTransform(viewportTransform.scale, 0, 0, viewportTransform.scale, viewportTransform.x, viewportTransform.y);
 
-      const gridSize = 25;
-      const squareSize = canvas.width / gridSize;
+      const gridSize = 5;
+      const squareSize = 100; //canvas.width / gridSize;
       const grid = [];
 
       for (let i = 0; i < gridSize; i++) {
