@@ -1,10 +1,10 @@
 * {
-    background-color: #ffd9ad;
+    color: #291528;
 }
 
 .navbar {
     height: 20vh;
-    background-color: #39a7e5;
+    background-color: #0ad3ff;
     position: sticky;
     top: 0;
     overflow: visible;
@@ -14,7 +14,7 @@
 }
 
 .navbar * {
-    background-color: #39a7e5;
+    background-color: #0ad3ff;
 }
 
 #siteLogo {
@@ -44,4 +44,8 @@ a:hover {
 
 section {
     padding: 0 70px;
+}
+
+body {
+    background-color: #ffeee9;
 }
