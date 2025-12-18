@@ -1,5 +1,6 @@
 * {
     color: #291528;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
 }
 
 .navbar {
@@ -49,3 +50,4 @@ section {
 body {
     background-color: #ffeee9;
 }
+
