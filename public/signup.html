@@ -31,7 +31,7 @@
             padding: 40px;
             max-width:600px;
             margin:40px auto;
-            border-radius:5px;
+            border-radius:10px;
             box-shadow:0 4px 10px 4px #9C6615;
             color: #3e003b;
         }
@@ -45,13 +45,12 @@
             justify-content: center;
         }
 
-
         .tab-groups li a {
             display: block;
             text-decoration: none;
-            padding: 25px;
-            background-color: orange;
-            color: #000000;
+            padding: 15px;
+            background-color: #98b4ba;
+            color: #006300;
             font-size: 1.25em;
             text-align: center;
             cursor: pointer;
@@ -59,8 +58,21 @@
         }
 
         .tab-groups li a:hover {
-            background-color: violet;
-            color: forestgreen;
+            background-color: #76d0e4;
+            font-weight: bold;
+        }
+
+        .tab-groups li a.active {
+            background: #0AD3FF;
+            font-weight: bold;
+        }
+
+        #signup, #login {
+            display: none;
+        }
+
+        #signup.active, #login.active {
+            display: block;
         }
 
         h1 {
@@ -89,14 +101,6 @@
 
         label.active .req {
             opacity: 0
-        }
-
-        #signup {
-            display: block;
-        }
-
-        #login {
-            display: none;
         }
 
         input, textarea {
@@ -150,14 +154,14 @@
             padding:15px 0;
             font-size:2rem;
             font-weight:bold;
-            background:#0AD3FF;
+            background-color:#0AD3FF;
             color: #291528;
             transition:all.5s ease;
             -webkit-appearance: none;
         }
 
         .button:hover, .button:focus {
-            background: #0ab5db;
+            background-color: #0ab5db;
         }
 
         .button-block {
@@ -183,12 +187,12 @@
 
         </div>
         <ul class="tab-groups">
-            <li class="activeTab"> <a onclick="signUp()"> Sign Up </a></li>
-            <li class="tab"> <a onclick="logIn()"> Log In </a> </li>
+            <li class="active"> <a onclick="signUp()" id="signUpButton"> Sign Up </a></li>
+            <li> <a onclick="logIn()" id="logInButton"> Log In </a> </li>
         </ul>
 
         <div class="tabs-content">
-            <div id="signup">
+            <div class="active" id="signup">
                 <h1> Sign Up </h1>
 
                 <form action="/" method="post">
@@ -241,19 +245,25 @@
     </div>
 
     <script>
-        let signUp = document.getElementById("signup");
-        let logIn = document.getElementById("login");
+        let signup = document.getElementById("signup");
+        let login = document.getElementById("login");
+
+        let signupButton = document.getElementById("signUpButton");
+        let loginButton = document.getElementById("logInButton");
 
         function signUp() {
-            logIn.style.display = "block";
-            signUp.style.display = "none";
+            signup.classList.add("active");
+            signupButton.classList.add("active");
+            login.classList.remove("active");
+            loginButton.classList.remove("active");
         }
 
         function logIn() {
-            logIn.style.display = "block";
-            signUp.style.display = "none";
+            signup.classList.remove("active");
+            signupButton.classList.remove("active");
+            login.classList.add("active");
+            loginButton.classList.add("active");
         }
-       
     </script>
 </body>
 </html>
