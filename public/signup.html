@@ -13,87 +13,72 @@
         * {
             box-sizing: border-box;
             overflow-y: scroll;
+            font-family: 'Verdana', Geneva, Tahoma, sans-serif;
         }
 
         a {
             text-decoration: none;
-            color: #ffffff;
+            color: #5f005a;
         }
 
         a:hover {
-            color: #000000;
+            color: #8c0085;
+            text-decoration: underline;
         }
 
         .form {
-            background-color: orange;
+            background-color: #FAE1BA;
             padding: 40px;
             max-width:600px;
             margin:40px auto;
-            border-radius:25px;
-            box-shadow:0 4px 10px 4px rgba(orange, .3);
+            border-radius:5px;
+            box-shadow:0 4px 10px 4px #9C6615;
+            color: #3e003b;
         }
 
         .tab-groups {
             list-style:none;
             padding:0;
-            margin:0 0 40px 0;
+            margin: 40px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
-        .tab-groups:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
 
         .tab-groups li a {
-            display:block;
-            text-decoration:none;
-            padding:15px;
-            background:rgba(red,.25);
-            color:aquamarine;
-            font-size:20px;
-            float:left;
-            width:50%;
-            text-align:center;
-            cursor:pointer;
-            transition:.5s ease;
+            display: block;
+            text-decoration: none;
+            padding: 25px;
+            background-color: orange;
+            color: #000000;
+            font-size: 1.25em;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.5s ease;
         }
 
-        .tab-groups:hover {
+        .tab-groups li a:hover {
             background-color: violet;
             color: forestgreen;
         }
 
-        .tab-groups.active a {
-            background:brown;
-            color:lightcoral;
-        }
-
-        .tab-content > div:last-child {
-            display:none;
-        }
-
         h1 {
             text-align:center;
-            color: white;
             font-weight: normal;
             margin:0 0 40px;
+            font-weight: bold;
         }
         
         label {
             position:absolute;
             transform:translateY(6px);
             left:13px;
-            color:rgba(white,.5);
+            color: rgba(5, 2, 5, 0.5);
             transition:all 0.25s ease;
             -webkit-backface-visibility: hidden;
             pointer-events: none;
             font-size:22px;
-        }
-
-        label.req {
-                margin:2px;
-                color: pink;
         }
 
         label.active {
@@ -106,8 +91,12 @@
             opacity: 0
         }
 
-        label.highlight {
-            color: white;
+        #signup {
+            display: block;
+        }
+
+        #login {
+            display: none;
         }
 
         input, textarea {
@@ -119,24 +108,19 @@
             background:none;
             background-image:none;
             border:1px solid gray;
-            color: white;
+            color: #291528;
             border-radius:0;
             transition:border-color .25s ease, box-shadow .25s ease;
         }
 
         input:focus, textarea:focus {
             outline:0;
-            border-color: yellowgreen;
-        }
-
-        textarea {
-            border:2px solid lightgray;
-            resize: vertical;
+            border-color: #9C6615;
         }
 
         .field-wrap {
-        position:relative;
-        margin-bottom:40px;
+            position:relative;
+            margin-bottom:40px;
         }
 
         .top-row:after {
@@ -156,7 +140,7 @@
         }
 
         span.req {
-            color: #ff0000;
+            color: #840000;
         }
 
         .button {
@@ -166,16 +150,14 @@
             padding:15px 0;
             font-size:2rem;
             font-weight:bold;
-            text-transform:uppercase;
-            letter-spacing:.1em;
-            background:powderblue;
-            color:white;
+            background:#0AD3FF;
+            color: #291528;
             transition:all.5s ease;
             -webkit-appearance: none;
         }
 
         .button:hover, .button:focus {
-            background:salmon;
+            background: #0ab5db;
         }
 
         .button-block {
@@ -183,49 +165,26 @@
             width:100%;
         }
 
-            .forgot {
+        .forgot {
             margin-top:-20px;
             text-align:right;
         }
 
     </style>
 
-    <!--link rel="stylesheet" href="../styles.css"-->
+    <link rel="stylesheet" href="../styles.css">
 
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="navbar">
-                <div id="siteLogo">
-                    <a href="../home.html"> <img src="../assets/logoFinal.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"> Conway's Playground </a>
-                </div>
-
-                <div class="dropdown">
-                    <div class="select">
-                        <span class="selected">Create</span>
-                        <div class="caret"></div>
-                    </div>
-
-                    <ul class="menu">
-                        <li><a href="../public/index.html">Maker</a></li>
-                        <li><a href="../public/backpack.html">Backpack</a></li>
-                        <li><a href="#">Projects</a></li>
-                    </ul>
-                </div>
-
-                <div id="accountsButton">
-                    <button><img src="../assets/accounts_icon.png" alt="account" title="Accounts' Directory" width="25%" height="25%"> </button>
-                </div>  
-            </div>
-        </nav>
-    </header>
-
     <div class = "form">
+
+        <div class="homeButton">
+            <a href="../home.html"> Home </a>
+
+        </div>
         <ul class="tab-groups">
-            <li><a href="../home.html"> Home </a></li>
-            <li class="activeTab"> <a href="#signup"> Sign Up </a></li>
-            <li clas="tab"> <a href="#login"> Log In </a> </li>
+            <li class="activeTab"> <a onclick="signUp()"> Sign Up </a></li>
+            <li class="tab"> <a onclick="logIn()"> Log In </a> </li>
         </ul>
 
         <div class="tabs-content">
@@ -282,49 +241,19 @@
     </div>
 
     <script>
-        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
-         var $this = $(this),
-        label = $this.prev('label');
+        let signUp = document.getElementById("signup");
+        let logIn = document.getElementById("login");
 
-        if (e.type === 'keyup') {
-                if ($this.val() === '') {
-            label.removeClass('active highlight');
-            } else {
-            label.addClass('active highlight');
-            }
-        } else if (e.type === 'blur') {
-            if( $this.val() === '' ) {
-                label.removeClass('active highlight'); 
-                } else {
-                label.removeClass('highlight');   
-                }   
-        } else if (e.type === 'focus') {
-        
-        if( $this.val() === '' ) {
-                label.removeClass('highlight'); 
-                } 
-        else if( $this.val() !== '' ) {
-                label.addClass('highlight');
-                }
+        function signUp() {
+            logIn.style.display = "block";
+            signUp.style.display = "none";
         }
 
-        });
-
-        $('.tab a').on('click', function (e) {
-        
-        e.preventDefault();
-        
-        $(this).parent().addClass('active');
-        $(this).parent().siblings().removeClass('active');
-        
-        target = $(this).attr('href');
-
-        $('.tab-content > div').not(target).hide();
-        
-        $(target).fadeIn(600);
-        
-        });
+        function logIn() {
+            logIn.style.display = "block";
+            signUp.style.display = "none";
+        }
+       
     </script>
 </body>
 </html>
