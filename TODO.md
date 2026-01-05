@@ -2,6 +2,7 @@
 ## Wednesday, January 7
 - [] CS3 Updated Project Proposal
 - [] CS3 Internal Organization
+- [] Website Navbar
 
 ## Friday, January 9
 - [] HTML of 5 initial webpages
