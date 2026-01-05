@@ -1,14 +1,3 @@
-# Immediate TODO
-- [] Make infinite grid using a canvas
-- [] Improve clickable grid (click and drag)
-- [] Improve button functionality
-- [] Add generation/population tracker
-
-# Future TODO
-- [] Add lifeform building tab
-- [] Add save functionality
-- [] Add colors to lifeforms
-
 # Project TODO
 ## Wednesday, January 7
 - [] CS3 Updated Project Proposal
@@ -24,17 +13,20 @@
 - [] JS of Patterns
 
 ## Wednesday, January 14
+- [] HTML Non-Q2 files
 - [] HTML Forms Part
-- [] 
+- [] JS Search Bar
+
+## Friday, January 16
+- [] CSS Non-Q2 files
 
 ## Sunday, January 18
-- [] JS Infinite Grid
+- [] JS Infinite Grid (Pt. 1/3)
 
 ## Tuesday, January 20
 - [] CS3 Project Submission
-- [] 
 
-## Website Plans
+# Website Plans
 - index.html // new file (change to diff file name)
 - home.html // homepage
 - homenoacc.html // homepage no acc (change to become new index.html)
@@ -42,3 +34,16 @@
 - signup.html // for signup of accounts
 - search.html // extension of searchbar from home
 - individual project files
+
+# Webpages Remaining Tasks
+# Immediate TODO
+- [] Make infinite grid using a canvas
+- [] Improve clickable grid (click and drag)
+- [] Improve button functionality
+- [] Add generation/population tracker
+
+# Future TODO
+- [] Add lifeform building tab
+- [] Add save functionality
+- [] Add colors to lifeforms
+
