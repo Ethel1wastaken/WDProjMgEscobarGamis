@@ -1,11 +1,21 @@
+:root {
+    color-scheme: light dark;
+    --backgroundColor: light-dark(#FFEEE9, #37123C);
+    --navBarColor: light-dark(#0AD3FF, #052F5F);
+    --textColor: light-dark(#291528, #E0B0D5); 
+    --footerColor: light-dark(#ffc7b6, #360a3c);    
+}
+
 * {
-    color: #291528;
+    color: var(--textColor);
     font-family: 'Verdana', Geneva, Tahoma, sans-serif;
 }
 
+/* NAVBAR */
+
 .navbar {
     height: 20vh;
-    background-color: #0ad3ff;
+    background-color: var(--backgroundColor);
     position: sticky;
     top: 0;
     overflow: visible;
@@ -15,7 +25,7 @@
 }
 
 .navbar * {
-    background-color: #0ad3ff;
+    background-color: var(--navBarColor);
 }
 
 #siteLogo {
@@ -48,6 +58,52 @@ section {
 }
 
 body {
-    background-color: #ffeee9;
+    background-color: var(--backgroundColor);
 }
 
+/* HOME PAGE */
+
+#searchBar img {
+    margin-bottom: -10px;
+}
+
+#searchBar label {
+    /* figure out how to put label inside input box*/
+}
+
+#searchBar a {
+    font-size: 1.5em;
+    /* find way to center properly */
+    /* put inside input box*/
+    /* find better symbol omg*/
+}
+
+#searchInput {
+    width: 45vw;
+    margin-top: 20px;
+}
+
+#featuredPages {
+    margin-top: 4.5em;
+}
+
+#featuredPages div {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 10rem;
+    padding: 10px;
+    background-color: var(--footerColor);
+}
+
+footer section {
+    margin-bottom: 10em;
+}
+
+.copyright {
+    /* set to center*/
+}
