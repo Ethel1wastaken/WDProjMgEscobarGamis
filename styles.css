@@ -14,51 +14,24 @@
 /* NAVBAR */
 
 .navbar {
-    height: 20vh;
     background-color: var(--backgroundColor);
-    position: sticky;
-    top: 0;
-    overflow: visible;
-    flex-wrap: wrap;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 50px;    
 }
 
-.navbar * {
-    background-color: var(--navBarColor);
+.navbar a {
+    text-decoration: none;
 }
+
 
 #siteLogo {
-    float: left;
-    width: 50%;
-}
-
-.navbuttons {
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#accountsButton {
-    width: 25%;
-}
-
-button:hover {
-    background-color:aquamarine
-}
-
-a:hover {
-    background-color: aquamarine;
+    /* figure out how to center align the text*/
 }
 
 section {
     padding: 0 70px;
-}
-
-body {
-    background-color: var(--backgroundColor);
 }
 
 /* HOME PAGE */
