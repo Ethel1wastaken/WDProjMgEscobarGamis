@@ -14,9 +14,9 @@ Conway's PlayGround is the hub for all things related to [Conway's Game of Life]
 3) **Search Results:**
 3) **Backpack:** A directory for the user's saved lifeforms. It is largely customizable, allowing for color-coding, folders, sorting, and tags. The backpack is accessible only to users with accounts.
 4) **Project View:** A detailed view of a project. It contains a thumbnail, title, description of the project, a link to the user who shared the project, and optional tags for better organization. When the thumbnail is clicked, it will lead to the project editor screen.
-5) **Project Edit:**     Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
-6) **Settings**
-7) **Account Sign-up/Log-in**
+5) **Project Edit:** Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
+6) **Settings:** You can customize the look of the website, as well as various settings for project management and editing. Once you save your settings, they will apply as long as you are signed in.
+7) **Account Sign-up/Log-in:** A page which allows you to sign up/log in in order to be able to save your projects. If you are not logged in, you will not be able to save your projects.
 
 
 
@@ -30,8 +30,8 @@ The working user interface for Conway's PlayGround may be accessed at this [link
 4) **Backpack:** The backpack saves the user's projects by making them JS objects. Within these objects are saved the project's name, description, search terms/tags, and the pattern of the lifeform.
 5) **Project View:** Like the backpack, it simply displays more information on a specific project using the same object.
 5) **Project Edit:** The project edit page mainly uses JS to simulate Conway's GoL. It currently uses a matrix of 0s and 1s to represent live and dead cells, and each time step applies the rules of GoL. The time taken for each timestep can be changed, and when the project is ready to be saved, the user will be prompted to fill out information on the project, which is saved as the object we see in the backpack and project view.
-7) **Settings:**
-8) **Account Sign-Up/Log-In:**
+7) **Settings:** JS will be used to store and retrieve user settings when the page loads. These settings will be saved in a private folder.
+8) **Account Sign-Up/Log-In:** JS will be used for form validation. For Log-in, it will refer to a private folder with account information and compare it to the user's input. If there is a match, then the user is logged in. For Sign-up, the user will enter information, which will be saved to the private folder.
 
 
 
