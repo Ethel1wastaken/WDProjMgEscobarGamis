@@ -2,66 +2,61 @@
 
 ## Conway's PlayGround
 ### Logo:
-![CS3  Q2 Project Proposal](https://github.com/user-attachments/assets/fd049769-18d8-4315-8382-07bf89bfb3a0)
+![Project Proposal Logo](https://github.com/Ethel1wastaken/WDProjMgEscobarGamis/blob/937e32875726bc652f257694bfb44e0746b0ec7a/assets/%5BCS3%5D%20Q2%20Project%20Proposal/%5BCS3%5D%20Q2%20Project%20Proposal.png)
 
 ## Description
 Conway's PlayGround is the hub for all things related to [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Conway's PlayGround is a library of well-known lifeforms such as the Gosper Glider Gun, a lifeform builder for making your very own projects, and a platform for sharing your creations and interacting with the Life community. We created Conway's PlayGround as we felt available libraries and builders for Life were lackluster. A main problem that we noticed was a lack of organization in lifeform libraries, as well as an overly simplified interface for building lifeforms. PlayGround is the direct product to address these problems. We want a more fitting site for such a cool game, and that's what we've done!
 
 ## Website Breakdown
+
 1) **Homepage:** Contains important updates, a search bar, and a list of featured projects. If the user has not logged in, there will be an optional prompt to log in upon entering the site.
 2) **Advanced Search:** Contains filters for types of lifeforms, users, creation date, and other parameters to narrow down your search. Search results will be displayed similarly to featured projects on the homepage.
-3) **Exploration:** An expanded view of the featured projects page. It may contain projects personalized to the user's interests.
-4) **Backpack:** A directory for the user's saved lifeforms. It is largely customizable, allowing for color-coding, folders, sorting, and tags. The backpack is accessible only to users with accounts.
-5) **Project View:** A detailed view of a project. It contains a thumbnail, title, description of the project, a link to the user who shared the project, and optional tags for better organization. When the thumbnail is clicked, it will lead to the project editor screen.
-6) **Project Edit:** Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
+3) **Search Results:**
+3) **Backpack:** A directory for the user's saved lifeforms. It is largely customizable, allowing for color-coding, folders, sorting, and tags. The backpack is accessible only to users with accounts.
+4) **Project View:** A detailed view of a project. It contains a thumbnail, title, description of the project, a link to the user who shared the project, and optional tags for better organization. When the thumbnail is clicked, it will lead to the project editor screen.
+5) **Project Edit:** Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
+6) **Settings:** You can customize the look of the website, as well as various settings for project management and editing. Once you save your settings, they will apply as long as you are signed in.
+7) **Account Sign-up/Log-in:** A page which allows you to sign up/log in in order to be able to save your projects. If you are not logged in, you will not be able to save your projects.
+
+
 
 ## Wireframe
-The working user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAG2zR02FDs/DpkxQuONIKW5XFavxaDppg/edit?utm_content=DAG2zR02FDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
-
-### **Home Page**
-![Account Home Page](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page.png "Home Page")
-
-### Home Page (Search Bar)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20w_%20dropdown.png)
-
-### Home Page (Search Bar)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20[Search].png)
-
-### Home Page (Search Bar - Filters)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20[Search]%20(2).png)
-
-### Backpack
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack.png)
-
-### Backpack - Uncollapsed
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack%20-%20Uncollapsed.png)
-
-### Backpack - My Creations
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack%20-%20Uncollapsed%20(2).png)
-
-### View Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/File%20View.png)
-
-### Create Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Create%20Project.png)
-
-### Save Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Save%20Project.png)
-
-### Footer (found in home page)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Footer.png)
+The working user interface for Conway's PlayGround may be accessed at this [link](  ). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
 
 ## JavaScript Implementation
-### HTML Forms
+1) **Homepage:** Search terms entered into the search bar are converted into an array of strings which will be saved.
+2) **Advanced Search:** Tags which are selected will be added to an array of strings which will be saved.
+3) **Search Results:** The array of search terms from the home page as well as the array of tags from the homepage will be compared with terms in the description of projects and lifeforms saved on the website. Depending on how similar the project/lifeform is to the search, it will be assigned a value which dictates how high it is in the search results.
+4) **Backpack:** The backpack saves the user's projects by making them JS objects. Within these objects are saved the project's name, description, search terms/tags, and the pattern of the lifeform.
+5) **Project View:** Like the backpack, it simply displays more information on a specific project using the same object.
+5) **Project Edit:** The project edit page mainly uses JS to simulate Conway's GoL. It currently uses a matrix of 0s and 1s to represent live and dead cells, and each time step applies the rules of GoL. The time taken for each timestep can be changed, and when the project is ready to be saved, the user will be prompted to fill out information on the project, which is saved as the object we see in the backpack and project view.
+7) **Settings:** JS will be used to store and retrieve user settings when the page loads. These settings will be saved in a private folder.
+8) **Account Sign-Up/Log-In:** JS will be used for form validation. For Log-in, it will refer to a private folder with account information and compare it to the user's input. If there is a match, then the user is logged in. For Sign-up, the user will enter information, which will be saved to the private folder.
+
+
+
+## HTML Forms
+### Search Bar
+
+- Results shown in *search results: lifeforms* and *search results: projects*
+
+The search bar on the home page will be used by the users to look up any publicly shared lifeform/project. Based on the string of text typed, it will return corresponding/matching lifeforms on one page, and corresponding projects on a separate page.
+**Form Type: Text**
+
+### Filter/Advanced Search
+
+- Results shown in *search results: lifeforms* and *search results: projects*
+
+Similar to the search bar, the filter will compare the tags checked (saved as an array of strings) with the tags of different projects/lifeforms, which is also saved as an array of strings. Based on how similar the two arrays are, the search results will be displayed in descending order of similarity to the searched tags.
+**Form Type: Checkbox**
+
+### Account Sign up
+- Results shown in *homepage* and *settings*
+
+The sign-up page is where users will create or log into their accounts in the website, which will be used to store their creations and saved lifeforms/projects in their backpacks. Additionally, they may also get recommendations in their emails if they consent. In the settings page, they can also adjust information about themselves.
+**Form Type: Text + Email + Password**
 
 ### Project Editing & Management
 
 ### Project Sharing
 
-Original Content: 
-Due to the technical nature of our website, JS will be used often. More specifically, we plan to use JS in the following:
-1. Project editing and management: An intetactive grid for making lifeforms, as well as save and upload function
-2. Accounts: Logging in, commenting on projects, etc.
-3. Sharing: Making sure shared projects show up on the website
-
-This is not a finalized list, and its contents may change over the course of this website's development.
