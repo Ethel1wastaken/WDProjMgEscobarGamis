@@ -2,7 +2,7 @@
 
 ## Conway's PlayGround
 ### Logo:
-![Project Proposal Logo](https://github.com/Ethel1wastaken/WDProjMgEscobarGamis/blob/937e32875726bc652f257694bfb44e0746b0ec7a/assets/%5BCS3%5D%20Q2%20Project%20Proposal/%5BCS3%5D%20Q2%20Project%20Proposal.png)
+![Project Proposal Logo](./assets/logoFinal.png)
 
 ## Description
 [Conway's PlayGround](https://ethel1wastaken.github.io/WDProjMgEscobarGamis/home.html) is the hub for all things related to [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Conway's PlayGround is a library of well-known lifeforms such as the Gosper Glider Gun, a lifeform builder for making your very own projects, and a platform for sharing your creations and interacting with the Life community. We created Conway's PlayGround as we felt available libraries and builders for Life were lackluster. A main problem that we noticed was a lack of organization in lifeform libraries, as well as an overly simplified interface for building lifeforms. PlayGround is the direct product to address these problems. We want a more fitting site for such a cool game, and that's what we've done!
@@ -21,7 +21,35 @@
 
 
 ## Wireframe
-The working user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAG2zR02FDs/DpkxQuONIKW5XFavxaDppg/edit?utm_content=DAG2zR02FDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
+The user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAG2zR02FDs/DpkxQuONIKW5XFavxaDppg/edit?utm_content=DAG2zR02FDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
+
+### UPDATE: HTML Forms
+
+### Search Bar Results - Lifestyle 
+![Search Bar Results - Lifestyle](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Lifeforms%20[Search%20Bar](1).png)
+
+### Search Bar Results - Projects
+![Search Bar Results - Projects](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Projects%20[Search%20Bar].png)
+
+### Filter Results - Lifestyle 
+![Filter Results - Lifestyle](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Lifeforms%20[Filters].png)
+
+### Filter Results - Projects 
+![Filter Results - Projects](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Projects%20[Filters].png)
+
+### Updated Home Page with Accounts Button
+![Updated Home Page with Accounts Button](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Home%20Page%20-%20Accounts.png)
+
+### Accounts Button (No Account) -> Sign Up
+![Sign Up Page](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Account%20Sign%20Up%20-%20Sign%20Up.png)
+
+### Accounts Button (No Account) -> Log In
+![Log In Page](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Account%20Sign%20Up%20-%20Log%20In.png)
+
+### Accounts Button (With Account) -> Settings
+![Settings](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Settings.png)
+
+
 
 ## JavaScript Implementation
 1) **Homepage:** Search terms entered into the search bar are converted into an array of strings which will be saved.
@@ -57,6 +85,7 @@ The sign-up page is where users will create or log into their accounts in the we
 **Form Type: Text + Email + Password**
 
 ### Project Editing & Management
+*to follow*
 
 ### Project Sharing
-
+*to follow*
