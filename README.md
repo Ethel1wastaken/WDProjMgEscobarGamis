@@ -5,13 +5,13 @@
 ![Project Proposal Logo](https://github.com/Ethel1wastaken/WDProjMgEscobarGamis/blob/937e32875726bc652f257694bfb44e0746b0ec7a/assets/%5BCS3%5D%20Q2%20Project%20Proposal/%5BCS3%5D%20Q2%20Project%20Proposal.png)
 
 ## Description
-Conway's PlayGround is the hub for all things related to [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Conway's PlayGround is a library of well-known lifeforms such as the Gosper Glider Gun, a lifeform builder for making your very own projects, and a platform for sharing your creations and interacting with the Life community. We created Conway's PlayGround as we felt available libraries and builders for Life were lackluster. A main problem that we noticed was a lack of organization in lifeform libraries, as well as an overly simplified interface for building lifeforms. PlayGround is the direct product to address these problems. We want a more fitting site for such a cool game, and that's what we've done!
+[Conway's PlayGround](https://ethel1wastaken.github.io/WDProjMgEscobarGamis/home.html) is the hub for all things related to [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Conway's PlayGround is a library of well-known lifeforms such as the Gosper Glider Gun, a lifeform builder for making your very own projects, and a platform for sharing your creations and interacting with the Life community. We created Conway's PlayGround as we felt available libraries and builders for Life were lackluster. A main problem that we noticed was a lack of organization in lifeform libraries, as well as an overly simplified interface for building lifeforms. PlayGround is the direct product to address these problems. We want a more fitting site for such a cool game, and that's what we've done!
 
 ## Website Breakdown
 
 1) **Homepage:** Contains important updates, a search bar, and a list of featured projects. If the user has not logged in, there will be an optional prompt to log in upon entering the site.
 2) **Advanced Search:** Contains filters for types of lifeforms, users, creation date, and other parameters to narrow down your search. Search results will be displayed similarly to featured projects on the homepage.
-3) **Search Results:**
+3) **Search Results:** Displays files that match the keyword typed in the search bar or the filters selected. It is divided into two webpages, for lifeforms  and for projects.
 3) **Backpack:** A directory for the user's saved lifeforms. It is largely customizable, allowing for color-coding, folders, sorting, and tags. The backpack is accessible only to users with accounts.
 4) **Project View:** A detailed view of a project. It contains a thumbnail, title, description of the project, a link to the user who shared the project, and optional tags for better organization. When the thumbnail is clicked, it will lead to the project editor screen.
 5) **Project Edit:** Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
@@ -21,7 +21,7 @@ Conway's PlayGround is the hub for all things related to [Conway's Game of Life]
 
 
 ## Wireframe
-The working user interface for Conway's PlayGround may be accessed at this [link](  ). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
+The working user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAG2zR02FDs/DpkxQuONIKW5XFavxaDppg/edit?utm_content=DAG2zR02FDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
 
 ## JavaScript Implementation
 1) **Homepage:** Search terms entered into the search bar are converted into an array of strings which will be saved.
