@@ -38,8 +38,55 @@ a:hover {
     padding: 30px 50px;    
 }
 
-#siteLogo {
-    /* figure out how to center align the text*/
+.navbar a {
+    text-decoration: none;
+}
+
+/* NAVBAR DROPDOWN */
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown a {
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--navBarColor);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 section {
@@ -50,10 +97,6 @@ section {
 
 #searchBar img {
     margin-bottom: -10px;
-}
-
-#searchBar label {
-    /* figure out how to put label inside input box*/
 }
 
 #searchBar a {
@@ -223,8 +266,4 @@ footer {
 
 footer section {
     margin-bottom: 10em;
-}
-
-.copyright {
-    /* set to center*/
 }

@@ -10,7 +10,21 @@
         <title> Conway's Playground </title>
         <link rel = "icon" href= "./assets/temporary-logo-turtle.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="dropdown.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+        <style>
+            .fa-caret-down {
+                color: inherit;
+            }
+
+            .fa-search {
+                color: inherit;
+            }
+
+            .fa-filter {
+                color: inherit;
+            }
+        </style>
+
         <script src="dropdown.js" defer></script>
     </head>
 
@@ -23,19 +37,15 @@
                     </div>
                     
                     <div class="dropdown">
-                        <div class="select">
-                            <span class="selected">Create</span>
-                            <div class="caret"></div>
+                        <button class="dropbtn"> Create <i class="fa fa-caret-down"></i> </button>
+                        <div class="dropdown-content">
+                            <a href="public/index.html"> Maker </a>
+                            <a href="public/backpack.html"> Backpack </a>
                         </div>
-                        <ul class="menu">
-                            <li><a href="public/index.html">Maker</a></li>
-                            <li><a href="public/backpack.html">Backpack</a></li>
-                            <li><a href="#">Projects</a></li>
-                        </ul>
                     </div>
 
                     <div id="accountsButton">
-                        <a href="public/signup.html"><button><img src="./assets/accounts_icon.png" alt="account" title="Accounts' Directory" width="25%" height="25%"> </button></a>
+                        <a href="public/signup.html"><button> <i class="fa fa-user fa-5x"></i></button></a>
                     </div> 
                 </div>
             </nav>
@@ -43,12 +53,12 @@
 
         <section id="searchBar">
             <div>
-                <img src="./assets/magnifying_glass.png" alt="magnifying glass" title="search bar" width="30vw" height="30vh">
+                <i class="fa fa-search"></i>
 
                 <label> Search... </label>
                     <input id="searchInput"/>
                 
-                <a> ☰ </a> 
+                <a> <i class="fa fa-filter"></i> </a> 
 
             </div>
         </section>
