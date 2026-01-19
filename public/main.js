@@ -5,10 +5,15 @@ import { renderGrid } from "./renderGrid.js";
 import { nextGeneration } from "./nextGeneration.js";
 import { gosper } from "./patterns/gosper.js";
 import { blank } from "./patterns/blank.js";
+import { puffertrain } from "./patterns/puffertrain.js";
+import { boatmaker } from "./patterns/boatmaker.js";
+import { slidegun } from "./patterns/slidegun.js";
+import { sombreros } from "./patterns/sombreros.js";
+import { spacerake } from "./patterns/spacerake.js";
 
 function mainLoop() {
-    renderGrid(state);
-    state = nextGeneration(state);
+    renderGrid(state.pattern);
+    state.pattern = nextGeneration(state.pattern);
 }
 
 function clearState(state) {
@@ -24,13 +29,13 @@ function clearState(state) {
 }
 
 function resetState() {
-    let newState = blank;
+    let newState = spacerake;
     return newState;
 }
 
 
 let state = resetState();
-renderGrid(state);
+renderGrid(state.pattern);
 
 let intervalId = null;
 
@@ -49,15 +54,15 @@ document.getElementById("start").onclick = function() {
 
 document.getElementById("reset").onclick = function() {
     state = resetState();
-    renderGrid(state);
+    renderGrid(state.pattern);
 } 
 
 document.getElementById("clear").onclick = function() {
-    state = clearState(state);
-    renderGrid(state);
+    state.pattern = clearState(state.pattern);
+    renderGrid(state.pattern);
 }
 
 document.getElementById("next").onclick = function() {
-    state = nextGeneration(state);
-    renderGrid(state);
+    state.pattern = nextGeneration(state.pattern);
+    renderGrid(state.pattern);
 }
