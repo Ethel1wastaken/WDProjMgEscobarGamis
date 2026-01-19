@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
         <style>
-            .fa-caret-down {
+            .fa-angle-down {
                 color: inherit;
             }
 
@@ -37,7 +37,7 @@
                     </div>
                     
                     <div class="dropdown">
-                        <button class="dropbtn"> Create <i class="fa fa-caret-down"></i> </button>
+                        <button class="dropbtn"> Create <i class="fa fa-angle-down"></i> </button>
                         <div class="dropdown-content">
                             <a href="public/index.html"> Maker </a>
                             <a href="public/backpack.html"> Backpack </a>
@@ -55,8 +55,10 @@
             <div>
                 <i class="fa fa-search"></i>
 
-                <label> Search... </label>
-                    <input id="searchInput"/>
+                <div class="field-wrap">
+                        <label> Username <span class="req">*</span></label>
+                        <input id="searchBar">
+                    </div>
                 
                 <a> <i class="fa fa-filter"></i> </a> 
 
