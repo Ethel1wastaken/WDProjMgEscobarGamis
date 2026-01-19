@@ -34,7 +34,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 30px;   
+    padding: 15px 30px;   
 }
 
 .navbar a {
@@ -46,6 +46,7 @@ a:hover {
 .dropdown {
     float: left;
     overflow: hidden;
+    margin-top: 25px;
     
 }
 
@@ -94,7 +95,12 @@ section {
 }
 
 /* HOME PAGE */
-
+.inline-header {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 32px; 
+  vertical-align: top;
+}
 #searchBar img {
     margin-bottom: -10px;
 }
