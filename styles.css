@@ -132,7 +132,7 @@ section {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-     border-style: double;
+    border-style: double;
     border-color: black;
 }
 
@@ -171,7 +171,7 @@ section {
     background-color: #ADE25D;
 }
 
-.active, #recents:hover {
+.active #recents:hover {
     background-color: #87ac4f;
 }
 
@@ -179,7 +179,7 @@ section {
     background-color: #ea8eb3;
 }
 
-.active, #myCreations:hover {
+.active #myCreations:hover {
     background-color: #cd648e;
 }
 
@@ -187,7 +187,7 @@ section {
     background-color: #9CFFFA;
 }
 
-.active, #otherCreators:hover {
+.active #otherCreators:hover {
     background-color: #6fcbc6;
 }
 
@@ -197,7 +197,7 @@ section {
     overflow: hidden;
     background-color: #f1f1f1;
     border-radius: 0 0 25px 25px;
-} 
+}
 
 /* SIGN UP */
 .form {
