@@ -161,40 +161,28 @@ section {
     border-radius: 25px 25px 0 0;
 }
 
-.collapsible:after {
-    content: '\02C5';
-    font-size: 13px;
-    color: #4a4a4a;
-    float: right;
-    margin-left: 5px;
-}
-
-.open:after {
-    content: "\02C4";
-}
-
 #recents {
-    background-color: #ADE25D;
+    background-color: light-dark(#ADE25D, #214E34);
 }
 
 #recents:hover {
-    background-color: #87ac4f;
+    background-color: light-dark(#87ac4f, #1f673d);
 }
 
 #myCreations {
-    background-color: #ea8eb3;
+    background-color: light-dark(#ea8eb3, #450521);
 }
 
 #myCreations:hover {
-    background-color: #cd648e;
+    background-color: light-dark(#cd648e, #c90352);
 }
 
 #otherCreators {
-    background-color: #9CFFFA;
+    background-color: light-dark(#9CFFFA, #3D348B);
 }
 
 #otherCreators:hover {
-    background-color: #6fcbc6;
+    background-color: light-dark(#6fcbc6, #5a4fc0);
 }
 
 .content {
