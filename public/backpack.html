@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <script src="../dropdown.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -70,7 +71,7 @@
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function() {
                 this.classList.toggle("open");
-                var content = this.nextElementSibling;
+                let content = this.nextElementSibling;
                 if (content.style.display === "block") 
                     content.style.display = "none";
                 
