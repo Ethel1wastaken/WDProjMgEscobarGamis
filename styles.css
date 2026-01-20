@@ -207,6 +207,11 @@ section {
 }
 
 /* SIGN UP */
+
+.button-block {
+    cursor: pointer;
+}
+
 .form {
     background-color: var(--backgroundColor);
     padding: 40px;
@@ -340,6 +345,37 @@ span.req {
 .forgot {
     margin-top:-20px;
     text-align:right;
+}
+
+/* REMEMBER ME CHECKBOX */
+input[type="checkbox"][name="remember"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid #0AD3FF;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+input[type="checkbox"][name="remember"]:checked {
+    background-color: #0AD3FF;
+}
+
+.tabs-content label:has(input[type="checkbox"]) {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    display: flex !important;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 16px;
+    pointer-events: auto !important;
 }
 
 /* FOOTER */
