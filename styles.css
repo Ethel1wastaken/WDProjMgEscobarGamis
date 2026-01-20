@@ -27,6 +27,10 @@ a:hover {
     text-decoration: underline;
 }
 
+section {
+    padding: 0 70px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -89,10 +93,6 @@ a:hover {
     display: block;
 }
 
-section {
-    padding: 0 70px;
-}
-
 /* HOME PAGE */
 
 #searchBar img {
@@ -130,11 +130,11 @@ section {
     display: inline-block;
     margin-top: 50px;
     margin-bottom: 25px;
-    background-color: #FFFFFF;
+    background-color: var(--gray);
     padding: 20px;
     border-radius: 10px;
     border-style: double;
-    border-color: black;
+    border-color: light-dark(#CE2D4F, #BD3A3A);
 }
 
 .collapsible {
@@ -172,7 +172,7 @@ section {
     background-color: #ADE25D;
 }
 
-.active #recents:hover {
+#recents:hover {
     background-color: #87ac4f;
 }
 
@@ -180,7 +180,7 @@ section {
     background-color: #ea8eb3;
 }
 
-.active #myCreations:hover {
+#myCreations:hover {
     background-color: #cd648e;
 }
 
@@ -188,7 +188,7 @@ section {
     background-color: #9CFFFA;
 }
 
-.active #otherCreators:hover {
+#otherCreators:hover {
     background-color: #6fcbc6;
 }
 
