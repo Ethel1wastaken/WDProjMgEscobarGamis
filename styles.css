@@ -27,6 +27,10 @@ a:hover {
     text-decoration: underline;
 }
 
+section {
+    padding: 0 70px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -79,19 +83,19 @@ a:hover {
 
 .dropdown-content a {
     float: none;
-    color: white;
+    color: var(--textColor);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown-content a:hover {
+    background-color: #2d0835;
 }
 
-section {
-    padding: 0 70px;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* HOME PAGE */
@@ -101,19 +105,20 @@ section {
   margin-top: 32px; 
   vertical-align: top;
 }
-#searchBar img {
-    margin-bottom: -10px;
+
+#searchBar label {
+    position: absolute;
+    z-index: 1;
+    transform: translateY(20px);
+    margin-left: 5px;
 }
 
 #searchBar a {
     font-size: 1.5em;
-    /* find way to center properly */
-    /* put inside input box*/
-    /* find better symbol omg*/
 }
 
-#searchInput {
-    width: 45vw;
+#searchBar input {
+    width: 50vw;
     margin-top: 20px;
 }
 
@@ -136,11 +141,11 @@ section {
     display: inline-block;
     margin-top: 50px;
     margin-bottom: 25px;
-    background-color: #FFFFFF;
+    background-color: var(--gray);
     padding: 20px;
     border-radius: 10px;
     border-style: double;
-    border-color: black;
+    border-color: light-dark(#CE2D4F, #BD3A3A);
 }
 
 .collapsible {
@@ -162,40 +167,28 @@ section {
     border-radius: 25px 25px 0 0;
 }
 
-.collapsible:after {
-    content: '\02C5';
-    font-size: 13px;
-    color: #4a4a4a;
-    float: right;
-    margin-left: 5px;
-}
-
-.open:after {
-    content: "\02C4";
-}
-
 #recents {
-    background-color: #ADE25D;
+    background-color: light-dark(#ADE25D, #214E34);
 }
 
-.active #recents:hover {
-    background-color: #87ac4f;
+#recents:hover {
+    background-color: light-dark(#87ac4f, #1f673d);
 }
 
 #myCreations {
-    background-color: #ea8eb3;
+    background-color: light-dark(#ea8eb3, #450521);
 }
 
-.active #myCreations:hover {
-    background-color: #cd648e;
+#myCreations:hover {
+    background-color: light-dark(#cd648e, #c90352);
 }
 
 #otherCreators {
-    background-color: #9CFFFA;
+    background-color: light-dark(#9CFFFA, #3D348B);
 }
 
-.active #otherCreators:hover {
-    background-color: #6fcbc6;
+#otherCreators:hover {
+    background-color: light-dark(#6fcbc6, #5a4fc0);
 }
 
 .content {
@@ -387,4 +380,8 @@ footer {
 
 footer section {
     margin-bottom: 10em;
+}
+
+.socmed {
+    display: flex;
 }
