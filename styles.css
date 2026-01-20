@@ -83,11 +83,15 @@ section {
 
 .dropdown-content a {
     float: none;
-    color: white;
+    color: var(--textColor);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #2d0835;
 }
 
 .dropdown:hover .dropdown-content {
@@ -102,13 +106,15 @@ section {
   vertical-align: top;
 }
 
-#searchBar img {
-    margin-bottom: -10px;
+#searchBar label {
+    position: absolute;
+    z-index: 1;
+    transform: translateY(20px);
+    margin-left: 5px;
 }
 
 #searchBar a {
     font-size: 1.5em;
-    /* put inside input box*/
 }
 
 #searchBar input {
@@ -338,4 +344,8 @@ footer {
 
 footer section {
     margin-bottom: 10em;
+}
+
+.socmed {
+    display: flex;
 }
