@@ -11,7 +11,7 @@
  
     <link rel="stylesheet" href="../styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../home.js"></script>
+    <script src="./signup.js"></script>
 
 </head>
 <body>
@@ -22,7 +22,7 @@
 
         </div>
         <ul class="tab-groups">
-            <li class="active"> <a onclick="signUp()" id="signUpButton"> Sign Up </a></li>
+            <li> <a onclick="signUp()" class="active" id="signUpButton"> Sign Up </a></li>
             <li> <a onclick="logIn()" id="logInButton"> Log In </a> </li>
         </ul>
 
@@ -30,7 +30,7 @@
             <div class="active" id="signup">
                 <h1> Sign Up </h1>
 
-                <form action="../home.js" method="post" id="signUpForm">
+                <form action="../home.html" method="post" id="signUpForm">
                     <div class="field-wrap">
                         <label for="username"> Username <span class="req">*</span></label>
                         <input type="text" id="username" name="username" required autocomplete="off">
