@@ -2,34 +2,83 @@
 let userAcc = localStorage.getItem("accounts");
 let accountsList;
 
+let incorrectMessage = document.getElementById("outputCorrect");
+
 if (!userAcc) {
-    accountsList = {} ;
+    accountsList = [] ;
 }
 
 else {
     accountsList = JSON.parse(userAcc);
 }
 
-const form = document.getElementById("signUpForm");
+signUpForm = document.getElementById("signUpForm");
+logInForm = document.getElementById("logInForm");
 
-form.addEventListener("submit", function(e) {
+document.getElementById("signUpForm").addEventListener("submit", signUpSubmit);
+document.getElementById("logInForm").addEventListener("submit", logInSubmit);
+
+
+function signUpSubmit(e) {
     e.preventDefault();
 
     if(confirm("Would you like to create an account for Conway's Playground?")) {
-        const userData = new FormData(form);
+       //declare variables for each info
+       let username = document.getElementById("username").value;
+       let email = document.getElementById("emailAdd").value;
+       let password = document.getElementById("password").value;
 
-        const obj = Object.fromEntries(userData.entries()); 
+       //assign object to store for each info
+       let userInfo = {
+        username: username,
+        email: email,
+        password: password
+       };
 
-        accountsList[obj.username] = {};
-        for (let key in obj) { 
-            if (key != "username") { 
-                accountsList[obj.uname][key] = obj[key];
-            }
-        }
+       //console.log info
+       console.log(userInfo);
 
-        console.log(accountsList);
-        userAcc = JSON.stringify(accountsList);
-        localStorage.setItem("accounts", userAcc);
-        form.onsubmit();
+       //push to local storage array
+       accountsList.push(userInfo);
+
+       //push array to local storage
+       localStorage.setItem("accounts", JSON.stringify(accountsList))
+
+       //console.log that ur done
+       console.log("Information stored into local storage");
+
+       window.location.href = "home.html";
     }
-})
+}
+
+function logInSubmit(e) {
+    e.preventDefault();
+
+    let usernameLog = document.getElementById("user").value;
+    let passwordLog = document.getElementById("logInPassword").value;
+
+    let availability = false;
+
+    let loginInfo = {
+        username: usernameLog,
+        password: passwordLog
+    }
+
+    console.log(loginInfo);
+    console.log(accountsList);
+
+    //check logInInfo
+    for(let i in accountsList) {
+       if(accountsList[i].username == loginInfo.username && accountsList[i].password == loginInfo.password)
+            availability = true;
+    }
+
+    if(availability) {
+        window.location.href = "home.html";
+    }
+
+    else {
+        console.log("Incorrect details")
+        incorrectMessage.innerHTML += "Incorrect username or password. Please try again";
+    }
+}
