@@ -38,7 +38,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px 30px;   
+    padding: 15px 30px;  
 }
 
 .navbar a {
@@ -369,6 +369,44 @@ input[type="checkbox"][name="remember"]:checked {
     margin-top: 20px;
     font-size: 16px;
     pointer-events: auto !important;
+}
+
+/* SETTINGS */
+.sidebar {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--backgroundColor);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: white;
+}
+
+.sidebar ul li{
+    list-style-type: none;
+}
+
+.sidebar ul li button {
+    width: 400px;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+
+}
+
+.settings {
+    height: 100%;
+    width: 100%;
+    background-color: var(--footerColor);
+    padding: 0 470px;
+    top: 0;
 }
 
 /* FOOTER */
