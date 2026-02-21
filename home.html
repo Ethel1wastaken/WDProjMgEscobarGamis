@@ -27,7 +27,8 @@
         </style>
 
         <script src="dropdown.js" defer></script>
-        <script src="home.js"></script>
+        <script src="home.js" defer></script>
+        <script type="module" src="home-search.js" defer></script>
     </head>
 
     <body>
@@ -56,20 +57,24 @@
 
         <section id="searchBar">
             <div>
-                <div class="field-wrap">
+                <form id="searchForm" action="search.html" method="get">
+                    <div class="field-wrap">
                         <i class="fa fa-search"></i>
 
-                        <input type="search" placeholder="Search Bar">
+                        <input id="searchInput" name="q" type="search" placeholder="Search Bar">
 
-                        <a> <i class="fa fa-filter"></i> </a> 
+                        <button id="searchButton" type="submit">Search</button>
+
+                        <a> <i class="fa fa-filter"></i> </a>
                     </div>
+                </form>
             </div>
         </section>
 
         <section id="featuredPages">
             <h1> Featured </h1>
 
-            <div #outputHere>
+            <div id="featuredOutput">
                 <p> insert files </p>
             </div>
         </section>

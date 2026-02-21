@@ -11,58 +11,115 @@ import { slidegun } from "./patterns/slidegun.js";
 import { sombreros } from "./patterns/sombreros.js";
 import { spacerake } from "./patterns/spacerake.js";
 
-function mainLoop() {
-    renderGrid(state.pattern);
-    state.pattern = nextGeneration(state.pattern);
+let generation = 0
+const createEmpty = (rows, cols) => {
+    const out = new Array(rows)
+    for (let r = 0; r < rows; r++) out[r] = new Array(cols).fill(0)
+    return out
 }
 
-function clearState(state) {
-    const rows = state.length;
-    const cols = state[0].length;
-
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-            state[r][c] = 0;
-        }
+const computePopulation = grid => {
+    let pop = 0
+    for (let r = 0; r < grid.length; r++) {
+        const row = grid[r]
+        for (let c = 0; c < row.length; c++) pop += row[c]
     }
-    return state;
+    return pop
 }
 
-function resetState() {
-    let newState = spacerake;
-    return newState;
+const updateCounters = grid => {
+    const genEl = document.getElementById('generation')
+    const popEl = document.getElementById('population')
+    if (genEl) genEl.innerText = `Generation: ${generation}`
+    if (popEl) popEl.innerText = `Population: ${computePopulation(grid)}`
+}
+
+let patternGrid = null
+let bufferGrid = null
+let originalPattern = null
+
+const copyGrid = grid => grid.map(row => row.slice())
+
+const mainLoop = () => {
+    if (!patternGrid || !bufferGrid) return
+    nextGeneration(patternGrid, bufferGrid)
+    const tmp = patternGrid
+    patternGrid = bufferGrid
+    bufferGrid = tmp
+    state.pattern = patternGrid
+    generation++
+    renderGrid(patternGrid)
+    updateCounters(patternGrid)
+}
+
+const clearGridInPlace = grid => { for (let r = 0; r < grid.length; r++) grid[r].fill(0) }
+
+const resetState = () => {
+    const saved = localStorage.getItem('selectedPattern')
+    if (saved) {
+        try { const parsed = JSON.parse(saved); localStorage.removeItem('selectedPattern'); return parsed } catch (e) { return spacerake }
+    }
+    return spacerake
 }
 
 
-let state = resetState();
-renderGrid(state.pattern);
+let state = resetState()
+originalPattern = copyGrid(state.pattern)
+patternGrid = copyGrid(state.pattern)
+bufferGrid = createEmpty(patternGrid.length, patternGrid[0].length)
+generation = 0
+renderGrid(patternGrid)
+updateCounters(patternGrid)
 
-let intervalId = null;
+let intervalId = null
 
-document.getElementById("start").onclick = function() {
+document.getElementById('start').onclick = () => {
+    const delay = 100
     if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-        document.getElementById("start").innerText = "▶";
-    }
-    else {
-        mainLoop();
-        intervalId = setInterval(mainLoop, 100);
-        document.getElementById("start").innerText = "⏸";
+        clearInterval(intervalId)
+        intervalId = null
+        document.getElementById('start').innerText = '▶'
+    } else {
+        mainLoop()
+        intervalId = setInterval(mainLoop, delay)
+        document.getElementById('start').innerText = '⏸'
     }
 }
 
-document.getElementById("reset").onclick = function() {
-    state = resetState();
-    renderGrid(state.pattern);
-} 
-
-document.getElementById("clear").onclick = function() {
-    state.pattern = clearState(state.pattern);
-    renderGrid(state.pattern);
+document.getElementById('reset').onclick = () => {
+    patternGrid = copyGrid(originalPattern)
+    bufferGrid = createEmpty(patternGrid.length, patternGrid[0].length)
+    state.pattern = patternGrid
+    generation = 0
+    renderGrid(patternGrid)
+    updateCounters(patternGrid)
 }
 
-document.getElementById("next").onclick = function() {
-    state.pattern = nextGeneration(state.pattern);
-    renderGrid(state.pattern);
+document.getElementById('clear').onclick = () => {
+    clearGridInPlace(patternGrid)
+    generation = 0
+    state.pattern = patternGrid
+    renderGrid(patternGrid)
+    updateCounters(patternGrid)
+}
+
+document.getElementById('next').onclick = () => {
+    nextGeneration(patternGrid, bufferGrid)
+    const tmp = patternGrid
+    patternGrid = bufferGrid
+    bufferGrid = tmp
+    state.pattern = patternGrid
+    generation++
+    renderGrid(patternGrid)
+    updateCounters(patternGrid)
+}
+
+document.getElementById('generate').onclick = () => {
+    const rows = patternGrid.length
+    const cols = patternGrid[0].length
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) patternGrid[r][c] = Math.random() < 0.25 ? 1 : 0
+    generation = 0
+    state.pattern = patternGrid
+    renderGrid(patternGrid)
+    updateCounters(patternGrid)
 }
