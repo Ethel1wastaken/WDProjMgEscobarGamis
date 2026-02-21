@@ -47,7 +47,7 @@ function signUpSubmit(e) {
        //console.log that ur done
        console.log("Information stored into local storage");
 
-       window.location.assign("/home.html");
+       window.location.assign("public/home.html");
     }
 }
 
