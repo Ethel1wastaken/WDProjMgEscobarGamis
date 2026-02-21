@@ -74,7 +74,7 @@ function logInSubmit(e) {
     }
 
     if(availability) {
-        window.location.assign("/home.html");
+        window.location.assign("public/home.html");
     }
 
     else {
