@@ -374,39 +374,35 @@ input[type="checkbox"][name="remember"]:checked {
 /* SETTINGS */
 .sidebar {
     height: 100%;
-    width: 400px;
+    width: 400px; /* change to 0 later before javascript*/
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
-    background-color: var(--backgroundColor);
+    z-index: 2;
+    background-color: white;
     overflow-x: hidden;
+    padding-top: 30px;
     transition: 0.5s;
-    padding-top: 20px;
+    font-size: 0;
 }
 
 .sidebar h2 {
-    color: white;
+    padding-left: 30px;
+    font-size: 1rem;
 }
 
-.sidebar ul li{
-    list-style-type: none;
-}
-
-.sidebar ul li button {
-    width: 400px;
+.sidebar button {
+    width: 100%;
     border: none;
-    padding: 20px;
-    font-size: 1.5em;
+    height: 50px;
+}
 
+.sidebar button:hover {
+    background-color: #0AD3FF;
 }
 
 .settings {
-    height: 100%;
-    width: 100%;
-    background-color: var(--footerColor);
-    padding: 0 470px;
-    top: 0;
+    margin: -500px;
 }
 
 /* FOOTER */
