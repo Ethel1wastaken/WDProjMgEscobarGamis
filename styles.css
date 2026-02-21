@@ -374,35 +374,134 @@ input[type="checkbox"][name="remember"]:checked {
 /* SETTINGS */
 .sidebar {
     height: 100%;
-    width: 400px; /* change to 0 later before javascript*/
+    width: 400px;
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
-    z-index: 2;
-    background-color: white;
+    background-color: #ff7c7c;
     overflow-x: hidden;
-    padding-top: 30px;
-    transition: 0.5s;
-    font-size: 0;
+    padding-top: 25px;
 }
 
 .sidebar h2 {
-    padding-left: 30px;
-    font-size: 1rem;
+    margin-left: 25px;
+    font-size: 2em;
 }
 
 .sidebar button {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 5px;
     width: 100%;
-    border: none;
     height: 50px;
+    border: none;
+    font-size: 1.25em;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .sidebar button:hover {
-    background-color: #0AD3FF;
+    background-color: rgb(6, 6, 91);
 }
 
 .settings {
-    margin: -500px;
+    margin-left: 400px;
+    padding-top: 20px;
+}
+
+.settings div {
+    margin-left: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    top: 3px;
+    left: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+} 
+
+.settingsOutput {
+    padding-left:20px;
+    font-style: italic;
+    font-size: 0.75em;
+    color: grey;
+}
+
+.profileDetails {
+    height: 170px;
+    padding: 20px;
+    background-color: rgb(255, 218, 149);
+    border-radius: 25px
+}
+
+.profileDetails label {
+    display: block;
+    margin: 5px;
+}
+
+.profileDetails label button {
+    float: right;
+    height: 30px;
+    background: none;
+    border: none;
+}
+
+.profileDetails label button:hover {
+    text-decoration: underline;
+    color:rgb(6, 6, 91);
 }
 
 /* FOOTER */

@@ -13,28 +13,65 @@
 
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar"> <!-- fixed side navigation -->
         <h2> Settings </h2>
 
         <div class="sidebarButtons">
             <button> Appearance </button>
             <button> Data & Privacy </button>
-            
         </div>
     </div>
 
-    <div>
-        <section class="settings">
+    <div class="settings"> <!-- page main content-->
+        <section> 
             <h1> Settings </h1>
 
-            <div>
+            <hr width="100%" size="1"></hr>
+
+            <div class="settingsAppearance">
                 <h2> Appearance </h2>
-                <p> yadda yadda </p>
+                
+                <div class="settingsMode"> 
+                    <label> <b> Dark Mode </b> 
+                        <label class="switch"> <!-- fix the button margin via css-->
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label> 
+                    </label> 
+                    <p class="settingsOutput"> yadda light/dark mode </p> <!-- add output via javascript-->
+                </div>
+                
+                <div>
+                    <p> 
+                        <b> Backpack Colors </b>
+                        <!-- insert the 5 choices-->
+                    </p>
+
+                    <p class="settingsOutput"> Theme (leave blank) </p> <!-- add output via javascript-->
+                </div>
+
+                <div>
+                    <label> <b> Show premade patterns </b>  
+                        <input type="checkbox" id="showPremadePatterns" name="showPremadePatterns" value="true"> 
+                    </label>
+                    <p class="settingsOutput"> insert explanation on what this means </p>
+                </div>
             </div>
             
-            <div>
+            <div class="settingsAccount">
                 <h2> Data & Privacy </h2>
-                <p> yadda yadda </p>
+
+                <h3> <b> Account Details </b></h3>
+                
+                <div class="profileDetails"> <!-- display as a box like the discord one-->
+                    <label> Username: <span></span> <!-- output via javascript--> <button> Edit </button> </label></br/>
+                    <label> Email: <span></span><!-- output via javascript--> <button> Edit </button> </label></br/>
+                    <label> Password: <span></span><!-- output via javascript--> <button> Edit </button> </label></br/>
+                </div></br/>
+
+                <label> Remember my data 
+                    <input type="checkbox" id="rememberData" name="rememberData" value="true"> 
+                </label>
             </div>
 
         </section>
