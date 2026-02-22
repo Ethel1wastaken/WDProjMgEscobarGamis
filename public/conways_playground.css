@@ -23,3 +23,22 @@
 .alive {
     background-color: rgb(28, 28, 28);
 }
+
+.grid-wrapper {
+    flex: 1 1 auto;
+    overflow: auto;
+    border: 1px solid #ccc;
+    max-height: 70vh;
+}
+
+.pattern-info {
+    width: 260px;
+    padding: 8px 12px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.pattern-info h3 { margin: 0 0 8px 0; font-size: 14px; }
+.pattern-info p { margin: 0 0 6px 0; font-size: 12px; line-height: 1.4; }
+
+.container { display: flex; gap: 12px; align-items: flex-start }

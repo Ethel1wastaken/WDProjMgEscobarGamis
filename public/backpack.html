@@ -45,41 +45,76 @@
 
     <section>
         <button class="collapsible" id="recents"> Recents </button>
-        <div class="content" style="background-color: light-dark(#d7faa2, #45795b);">
-            <p> ldjfks;slkdjfsdlk </p>
+        <div class="content" id="recentsContent" style="background-color: light-dark(#d7faa2, #45795b);">
+            <p>No recent patterns.</p>
         </div>
     </section>
     
     <section>
         <button class="collapsible" id="myCreations"> My Creations </button>
-        <div class="content" style="background-color: light-dark(#f4adc9, #934165);">
-            <p> ldjfks;slkdjfsdlk </p>
+        <div class="content" id="myCreationsContent" style="background-color: light-dark(#f4adc9, #934165);">
+            <p>No patterns created yet.</p>
         </div>
     </section>
 
     <section>
         <button class="collapsible" id="otherCreators"> Other Creators </button>
-        <div class="content" style="background-color: light-dark(#c4fcf9, #59548e);">
-            <p> ldjfks;slkdjfsdlk </p>
+        <div class="content" id="otherCreatorsContent" style="background-color: light-dark(#c4fcf9, #59548e);">
+            <p>No shared patterns available.</p>
         </div>
     </section>
 
     <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
+        // Collapsible toggling
+        const coll = document.getElementsByClassName("collapsible")
+        for (let i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function() {
-                this.classList.toggle("open");
-                let content = this.nextElementSibling;
+                this.classList.toggle("open")
+                let content = this.nextElementSibling
                 if (content.style.display === "block") 
-                    content.style.display = "none";
-                
+                    content.style.display = "none"
                 else 
-                content.style.display = "block";
-                
-            });
-        } 
+                    content.style.display = "block"
+            })
+        }
+
+        // Load patterns from backpack localStorage
+        const loadBackpack = () => {
+            const backpack = JSON.parse(localStorage.getItem('backpack') || '{"myCreations": [], "recents": [], "otherCreators": []}')
+            
+            const renderPatternList = (patterns, containerId) => {
+                const container = document.getElementById(containerId)
+                if (!patterns || patterns.length === 0) {
+                    container.innerHTML = '<p>No patterns in this section.</p>'
+                    return
+                }
+                const list = document.createElement('ul')
+                list.style.listStyle = 'none'
+                list.style.padding = '8px 12px'
+                patterns.forEach((p, idx) => {
+                    const li = document.createElement('li')
+                    li.style.padding = '6px 0'
+                    li.style.cursor = 'pointer'
+                    li.style.borderBottom = '1px solid rgba(0,0,0,0.1)'
+                    li.innerText = p.title || `Pattern ${idx + 1}`
+                    li.onclick = () => {
+                        localStorage.setItem('selectedPattern', JSON.stringify(p))
+                        window.location.href = './index.html'
+                    }
+                    li.onmouseover = () => li.style.background = 'rgba(0,0,0,0.1)'
+                    li.onmouseout = () => li.style.background = 'none'
+                    list.appendChild(li)
+                })
+                container.innerHTML = ''
+                container.appendChild(list)
+            }
+
+            renderPatternList(backpack.recents, 'recentsContent')
+            renderPatternList(backpack.myCreations, 'myCreationsContent')
+            renderPatternList(backpack.otherCreators, 'otherCreatorsContent')
+        }
+
+        loadBackpack()
     </script>
 
 </body>
