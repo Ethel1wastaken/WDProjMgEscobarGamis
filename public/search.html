@@ -4,27 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Search Patterns</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../dropdown.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../dropdown.js" defer></script>
 </head>
 <body>
     <header>
             <nav>
                 <div class="navbar">
                     <div id="siteLogo">
-                        <a href="home.html"> <img src="./assets/logoFinal.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"></a>
+                        <a href="../home.html"> <img src="../assets/logoFinal.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"></a>
                         <h2 class="inline-header"> Conway's Playground </h2>
                     </div>
                     
                     <div class="dropdown">
                         <button class="dropbtn"> Create <i class="fa fa-angle-down"></i> </button>
                         <div class="dropdown-content">
-                            <a href="public/index.html"> Maker </a>
-                            <a href="public/backpack.html"> Backpack </a>
+                            <a href="./index.html"> Maker </a>
+                            <a href="./backpack.html"> Backpack </a>
                         </div>
                     </div>
 
                     <div id="accountsButton">
-                        <a href="public/signup.html"><button> <i class="fa fa-user fa-5x"></i></button></a>
+                        <a href="./signup.html"><button> <i class="fa fa-user fa-5x"></i></button></a>
                     </div> 
                 </div>
             </nav>
@@ -39,9 +42,6 @@
     <section id="searchResults">
     </section>
 
-    <script>
-        function parseTerms(q){ if(!q) return[]; if(Array.isArray(q)) return q.map(t=>t.toLowerCase().trim()).filter(Boolean); return q.split(',').map(t=>t.toLowerCase().trim()).filter(Boolean) }
-    </script>
     <script type="module" src="search-page.js"></script>
 </body>
 </html>
