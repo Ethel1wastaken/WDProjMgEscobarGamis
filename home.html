@@ -48,8 +48,14 @@
                         </div>
                     </div>
 
-                    <div id="accountsButton">
-                        <a href="public/signup.html"><button> <i class="fa fa-user fa-5x"></i></button></a>
+                    <div class="dropdown">
+                        <button class="dropbtn" id="profile"> <i class="fa fa-user fa-5x"></i></button>
+                        <div class="dropdown-content">
+                            <p id="usernameOutput"> </p>
+                            <a href="public/signup.html"> Switch Accounts </a> <!-- make dropdown in the future -->
+                            <a class="noAccount" href="public/settings.html"> Settings </a>
+                            <a href="public/signup.html"> Log Out </a>
+                        </div>
                     </div> 
                 </div>
             </nav>

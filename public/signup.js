@@ -3,6 +3,8 @@ let accountsList;
 
 let incorrectMessage = document.getElementById("outputCorrect");
 
+let activeAcc = {};
+
 if (!userAcc) {
     accountsList = [];
 } else {
@@ -38,6 +40,14 @@ function signUpSubmit(e) {
 
        console.log("Information stored into local storage");
 
+       activeAcc = {
+            username: userInfo.username,
+            email: userInfo.email,
+            password: userInfo.password
+       }
+
+       localStorage.setItem("activeAccount", JSON.stringify(activeAcc));
+
        window.location.assign("../home.html");
     }
 }
@@ -59,14 +69,28 @@ function logInSubmit(e) {
     console.log(accountsList);
 
     for(let i in accountsList) {
-       if(accountsList[i].username == loginInfo.username && accountsList[i].password == loginInfo.password)
+       if(accountsList[i].username == loginInfo.username && accountsList[i].password == loginInfo.password) {
             availability = true;
+
+            if(availability) {
+                activeAcc = {
+                    username: loginInfo.username,
+                    email: accountsList[i].email,
+                    password: loginInfo.password
+                }
+
+                localStorage.setItem("activeAccount", JSON.stringify(activeAcc));
+
+            }
+       }
     }
 
     if(availability) {
         window.location.assign("../home.html");
-    } else {
+    } 
+    
+    else {
         console.log("Incorrect details")
-        incorrectMessage.innerHTML += "Incorrect username or password. Please try again";
+        incorrectMessage.innerHTML = "Incorrect username or password. Please try again";
     }
 }
