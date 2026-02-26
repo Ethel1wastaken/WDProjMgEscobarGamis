@@ -418,6 +418,22 @@ input[type="checkbox"][name="remember"]:checked {
     margin-left: 20px;
 }
 
+.settingsAppearance {
+    display: none;
+}
+
+.settingsAccount {
+    display: none;
+}
+
+.settingsAppearance.active {
+    display: block;
+}
+
+.settingsAccount.active {
+    display: block;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -499,13 +515,37 @@ input:checked + .slider:before {
 .profileDetails label button {
     float: right;
     height: 30px;
-    background: none;
+    background-color: white;
+    border-radius: 5px;
     border: none;
 }
 
 .profileDetails label button:hover {
-    text-decoration: underline;
+    background-color: rgb(206, 206, 206);
     color:rgb(6, 6, 91);
+}
+
+dialog {
+    display: none;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    margin-top: 300px;
+    z-index: 2;
+}
+
+dialog input {
+    margin-top: 15px;
+}
+
+dialog.open {
+    display: block;
+    position: absolute;
 }
 
 /* FOOTER */

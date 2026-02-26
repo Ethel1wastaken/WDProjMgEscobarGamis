@@ -13,12 +13,51 @@
 
 </head>
 <body>
+
+    <!-- popups for edits-->
+    <dialog id="newUser">
+        <p> Current Username: <span id="currentUsername"></span></p></br/>
+        
+        <form id="userName">
+            <label> New Username <input type="text" id="newUsername" name="newUsername"> </label></br/>
+
+            <input type="submit" value="Submit"></input>
+            <button onclick="userCancel()"> Cancel </button>
+        </form>
+    </dialog>
+
+    <dialog id="newMail">
+        <p> Current Email: <span id="currentEmail"></span></p></br/>
+        
+        <form id="eMail">
+            <label> New Email <input type="text" id="newEmail" name="newEmail"> </label></br/>
+
+            <input type="submit" value="Submit"></input>
+            <button onclick="mailCancel()"> Cancel </button>
+        </form>
+    </dialog>
+
+    <dialog id="newPass">
+        <p> Current Password: <span id="currentPassword"></span></p></br/>
+        
+        <form id="passWord">
+            <label> New Username <input type="text" id="newPassword" name="newPassword"> </label></br/>
+
+            <input type="submit" value="Submit"></input>
+            <button onclick="passCancel()"> Cancel </button>
+        </form>
+    </dialog>
+
+    <!-- visible section -->
+
     <div class="sidebar"> <!-- fixed side navigation -->
         <h2> Settings </h2>
 
+        <a href="../home.html"> Home </a>
+
         <div class="sidebarButtons">
-            <button> Appearance </button>
-            <button> Data & Privacy </button>
+            <button onclick="settingsAppearance()"> Appearance </button>
+            <button onclick="settingsAccount()"> Data & Privacy </button>
         </div>
     </div>
 
@@ -28,12 +67,12 @@
 
             <hr width="100%" size="1"></hr>
 
-            <div class="settingsAppearance">
+            <div class="settingsAppearance" class="active" id="design">
                 <h2> Appearance </h2>
                 
                 <div class="settingsMode"> 
                     <label> <b> Dark Mode </b> 
-                        <label class="switch"> <!-- fix the button margin via css-->
+                        <label class="switch">
                             <input type="checkbox">
                             <span class="slider round"></span>
                         </label> 
@@ -58,25 +97,20 @@
                 </div>
             </div>
             
-            <div class="settingsAccount">
+            <div class="settingsAccount" id="account">
                 <h2> Data & Privacy </h2>
 
                 <h3> <b> Account Details </b></h3>
                 
                 <div class="profileDetails"> <!-- display as a box like the discord one-->
-                    <label> Username: <span></span> <!-- output via javascript--> <button> Edit </button> </label></br/>
-                    <label> Email: <span></span><!-- output via javascript--> <button> Edit </button> </label></br/>
-                    <label> Password: <span></span><!-- output via javascript--> <button> Edit </button> </label></br/>
+                    <label> <b> Username: </b> <span id="username"></span> <!-- output via javascript--> <button onclick="userEdit()"> Edit </button> </label></br/>
+                    <label> <b> Email: </b> <span id="email"></span><!-- output via javascript--> <button onclick="mailEdit()"> Edit </button> </label></br/>
+                    <label> <b> Password: </b> <span id="password"></span><!-- output via javascript--> <button onclick="passEdit()"> Edit </button> </label></br/>
                 </div></br/>
-
-                <label> Remember my data 
-                    <input type="checkbox" id="rememberData" name="rememberData" value="true"> 
-                </label>
             </div>
-
         </section>
     </div>
 
-    <script></script>
+    <script src="settings.js"></script>
 </body>
 </html>

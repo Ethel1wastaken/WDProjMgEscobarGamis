@@ -5,3 +5,7 @@ let usernameDisplay = document.getElementById("usernameOutput");
 console.log(currentAccount);
 
 usernameDisplay.innerHTML += currentAccount.username;
+
+function logOut() {
+    localStorage.removeItem("activeAccount");
+}
