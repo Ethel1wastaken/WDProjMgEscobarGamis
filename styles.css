@@ -3,6 +3,7 @@
     color-scheme: light dark;
     --bg: light-dark(#FFEEE9, #000000);
     --backgroundColor: light-dark(#ffaaea, #37123C);
+    --lighterBackgroundColor: light-dark(#ffc8f1, #4f2e53);
     --textColor: light-dark(#3c113a, #E0B0D5); 
     --darkerTextColor: light-dark(#53014f, #df5dc0); 
     --footerColor: light-dark(#ffc7b6, #360a3c);
@@ -130,10 +131,28 @@ section {
     margin-top: 4.5em;
 }
 
+#featuredPages h1 {
+    color: var(--darkerTextColor);
+}
+
 #featuredPages div {
-    background-color: #FFFFFF;
+    background-color: var(--lighterBackgroundColor);
+    color: var(--darkerTextColor);
     border-radius: 5px;
     padding: 5px;
+}
+
+#featuredPages button {
+    float: right;
+    border: none;
+    background: var(--backgroundColor);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#featuredPages button:hover {
+    background-color: var(--footerColor);
+    color: var(--darkerTextColor);
 }
 
 /*BACKPACK*/
@@ -536,7 +555,7 @@ input:checked + .slider:before {
 
 dialog {
     display: none;
-    background-color: var(--gray);
+    background-color: var(--lighterBackgroundColor);
     border: none;
     border-radius: 5px;
     padding: 20px;
