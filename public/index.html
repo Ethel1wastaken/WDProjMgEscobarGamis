@@ -44,29 +44,32 @@
     <div class="controls">
         <button id="mode" style="position: relative;">
             <span id="modeText">Edit Mode</span>
-            <span style="display: block; font-size: 10px; font-weight: normal; color: #666; margin-top: 2px;">Press M to toggle</span>
+            <span style="display: block; font-size: 10px; font-weight: normal; font-style: italic;color: #666; margin-top: 2px;">Press M to toggle</span>
         </button>
         <button id="generate">Generate Random Grid</button>
         <button id="newPattern">New Pattern</button>
         <button id="saveToBackpack">Save to Backpack</button>
-        <span id="generation">Generation: 0</span>
-        <span id="population">Population: 0</span>
+
+        <div class="infoSpan">
+            <span id="generation">Generation: 0</span>
+            <span id="population">Population: 0</span>
+        </div>
     </div>
 
     <main class="container">
         <aside id="patternInfo" class="pattern-info">
             <h3 id="patternTitle">Pattern</h3>
             <p id="patternDescription">No pattern loaded.</p>
-            <p id="patternTags"></p>
+            <p id="patternTags"></p></br/>
+
+            <button id="start">▶</button>
+            <button id="reset">↩</button>
+            <button id="next">⏭</button>
+            <button id="clear">🗑</button>
         </aside>
         <section id="gridWrapper" class="grid-wrapper"></section>
     </main>
     <br/>
     <br/>
-    <button id="start">▶</button>
-    <button id="reset">↩</button>
-    <button id="next">⏭</button>
-    <button id="clear">🗑</button>
-    
 </body>
 </html>

@@ -10,6 +10,7 @@
     --base: light-dark(#FFFFFF, #000000);
     --baseOpposite: light-dark(#000000, #FFFFFF);
     --gray: light-dark(#e7e7e7, #535353);
+    --grayOpposite: light-dark(#e7e7e7, #535353);
 }
 
 * {
@@ -174,6 +175,34 @@ section {
 #searchResults button {
     border: none;
     background: none;
+}
+
+/*MAKER*/
+
+.controls button {
+    margin-top: 30px;
+    background-color: var(--backgroundColor);
+    border-color: var(--footerColor);
+    border-radius: 10px;
+}
+
+.controls button:hover, .controls button:active {
+    background-color: var(--lighterBackgroundColor);
+}
+
+.infoSpan {
+    float: right;
+    margin: 20px;
+    border-style: double;
+    padding: 15px; 
+    background-color: var(--grayOpposite);
+    color: var(--darkerTextColor);
+}
+
+.container aside {
+    margin-top: 10px;
+    background-color: var(--footerColor);
+    border-radius: 5px;
 }
 
 /*BACKPACK*/
