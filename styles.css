@@ -155,6 +155,27 @@ section {
     color: var(--darkerTextColor);
 }
 
+/*SEARCH PAGE*/
+#searchResults div {
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+#searchResults div:hover {
+    background-color: var(--gray);
+}
+
+#searchResults div:hover h3, #searchResults button:hover {
+    text-decoration: underline;
+    color: var(--darkerTextColor);
+}
+
+#searchResults button {
+    border: none;
+    background: none;
+}
+
 /*BACKPACK*/
 .title {
     text-align: center;
