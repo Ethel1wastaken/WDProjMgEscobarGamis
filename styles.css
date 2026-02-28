@@ -383,7 +383,7 @@ input[type="checkbox"][name="remember"]:checked {
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: #ff7c7c;
+    background-color: var(--footerColor);
     overflow-x: hidden;
     padding-top: 25px;
 }
@@ -391,6 +391,14 @@ input[type="checkbox"][name="remember"]:checked {
 .sidebar h2 {
     margin-left: 25px;
     font-size: 2em;
+    color: var(--darkerTextColor);
+}
+
+.sidebar a {
+    float: right;
+    top: 0;
+    margin: 25px;
+    color: var(--darkerTextColor);
 }
 
 .sidebar button {
@@ -406,7 +414,7 @@ input[type="checkbox"][name="remember"]:checked {
 }
 
 .sidebar button:hover {
-    background-color: rgb(6, 6, 91);
+    background-color: light-dark(#8787de, #06065b);
 }
 
 .settings {
@@ -501,10 +509,11 @@ input:checked + .slider:before {
 }
 
 .profileDetails {
+    color: var(--darkerTextColor);
     height: 170px;
     padding: 20px;
-    background-color: rgb(255, 218, 149);
-    border-radius: 25px
+    background-color: var(--footerColor);
+    border-radius: 25px;
 }
 
 .profileDetails label {
@@ -515,7 +524,7 @@ input:checked + .slider:before {
 .profileDetails label button {
     float: right;
     height: 30px;
-    background-color: white;
+    background-color: var(--gray);
     border-radius: 5px;
     border: none;
 }
@@ -527,7 +536,7 @@ input:checked + .slider:before {
 
 dialog {
     display: none;
-    background-color: black;
+    background-color: var(--gray);
     border: none;
     border-radius: 5px;
     padding: 20px;
