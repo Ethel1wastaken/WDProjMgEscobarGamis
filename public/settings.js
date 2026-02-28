@@ -1,5 +1,4 @@
-let accountInfo = JSON.parse(localStorage.getItem("activeAccount"));
-
+let currentAccount = JSON.parse(localStorage.getItem("activeAccount"));
 let createdAccounts = JSON.parse(localStorage.getItem("accounts"));
 
 //SIDEBAR
@@ -26,14 +25,14 @@ let userDisplay = document.getElementById("username");
 let mailDisplay = document.getElementById("email");
 let passDisplay = document.getElementById("password");
 
-userDisplay.innerHTML += accountInfo.username; 
-mailDisplay.innerHTML += accountInfo.email;
-passDisplay.innerHTML += accountInfo.password;
+userDisplay.innerHTML += currentAccount.username; 
+mailDisplay.innerHTML += currentAccount.email;
+passDisplay.innerHTML += currentAccount.password;
 
 //username edits - NOTE: might make all use only two functions using keyword 'this' in the future
 let username = document.getElementById("currentUsername");
 
-username.innerHTML += accountInfo.username;
+username.innerHTML += currentAccount.username;
 
 function userEdit() {
     document.getElementById("newUser").setAttribute("class", "open");
@@ -46,7 +45,7 @@ function userCancel() {
 //email edits
 let email  = document.getElementById("currentEmail");
 
-email.innerHTML += accountInfo.email;
+email.innerHTML += currentAccount.email;
 
 function mailEdit () {
     document.getElementById("newMail").setAttribute("class", "open");
@@ -59,7 +58,7 @@ function mailCancel() {
 // password edits
 let password  = document.getElementById("currentPassword");
 
-password.innerHTML += accountInfo.password;
+password.innerHTML += currentAccount.password;
 
 function passEdit () {
     document.getElementById("newPass").setAttribute("class", "open");
@@ -83,8 +82,8 @@ function changeUsername(e) {
     e.preventDefault();
 
     for(let i in createdAccounts) {
-        if(createdAccounts[i].username == accountInfo.username) {
-            accountInfo.username = updatedUsername;
+        if(createdAccounts[i].username == currentAccount.username) {
+            currentAccount.username = updatedUsername;
             createdAccounts[i].username = updatedUsername;
 
             console.log("Username successfully updated")
