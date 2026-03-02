@@ -7,6 +7,7 @@
     --textColor: light-dark(#3c113a, #E0B0D5); 
     --darkerTextColor: light-dark(#53014f, #df5dc0); 
     --footerColor: light-dark(#ffc7b6, #360a3c);
+    --darkerFooterColor: light-dark(#e49c86, #220326);
     --base: light-dark(#FFFFFF, #000000);
     --baseOpposite: light-dark(#000000, #FFFFFF);
     --gray: light-dark(#e7e7e7, #535353);
@@ -77,7 +78,7 @@ section {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #300835;
+    background-color: var(--footerColor);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -93,7 +94,7 @@ section {
 }
 
 .dropdown-content a:hover {
-    background-color: #2d0835;
+    background-color: var(--darkerFooterColor);
 }
 
 .dropdown:hover .dropdown-content {
