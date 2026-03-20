@@ -19,10 +19,18 @@
 4) **Project View:** A detailed view of a project. It contains a thumbnail, title, description of the project, a link to the user who shared the project, and optional tags for better organization. When the thumbnail is clicked, it will lead to the project editor screen.
 5) **Project Edit:** Where you build and modify lifeforms. Contains features other simulators have, such as a speed slider, canvas size editor, population and generation tracker, etc. The backpack is accessible from a minimized tab, allowing the user to drag and drop other lifeforms into their project. When saving/sharing the project, there is an option to save the project either at its current generation, or the first generation.
 6) **Settings:** You can customize the look of the website, as well as various settings for project management and editing. Once you save your settings, they will apply as long as you are signed in.
-7) **Account Sign-up/Log-in:** A page which allows you to sign up/log in in order to be able to save your projects. If you are not logged in, you will not be able to save your projects.
+7) **Account Sign-up/Log-in:** A page which allows you to sign up/log in in order to be able to save your projects. If you are not logged in, you will not be able to save your projects. Having an account will also allow you to customize the appearance of the website
 
 ## [Q4] Final Modification Proposal
 *note that all changes mentioned here have also been updated in their respective sections in this proposal*
+
+With user data being saved as they sign up for account, such as their username, email, and password, they may also update any of these in the settings of the webpage. 
+
+Additionally, users may also create multiple accounts, and may opt to disable these accounts to permanently delete them.
+
+Users will also be allowed to update the titles of their patterns, and delete the files when needed.
+
+In the settings, user preferences about the color scheme of the maker and backpack pages will also be saved in the local storage, and updated accordingly. 
 
 ## Wireframe
 The user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAHEEYJKSPg/3VYswU89ZBSKnssl3K1U6A/edit?utm_content=DAHEEYJKSPg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
@@ -30,16 +38,72 @@ The user interface for Conway's PlayGround may be accessed at this [link](https:
 ### **UPDATE: All wireframes have been revised**
 
 ### **Home Page**
-![Home Page](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/[Light]%20Home%20#1.png)
 
-![Home Page](,/asse)
+![Homepage 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%201.png)
 
-### Home Page (Search Bar)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20w_%20dropdown.png)
+![Homepage 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%202.png)
 
-### Home Page (Search Bar)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20[Search].png)
+![Homepage 3](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%203.png)
 
+![Homepage 4](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%204.png)
+
+![Homepage 5](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%205.png)
+
+### **Search Bar and Search Results**
+![Homepage 6](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%206.png)
+
+![Search Results 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Search%20Results%201.png)
+
+![Search Results 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Search%20Results%202.png)
+
+### **Maker**
+![Maker](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Maker%201.png)
+ *~ maker will have the same customizable color scheme as backpack*
+
+### **Backpack**
+![Homepage 7](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Home%207.png)
+
+![Backpack 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Backpack%201.png)
+
+![Backpack 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Backpack%202.png)
+
+![Backpack 3](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Backpack%203.png)
+
+![Backpack 4](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Backpack%204.png)
+
+![Backpack 5](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Backpack%205.png)
+
+### **Accounts Button**
+![Account Button 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Account%20Button%201.png)
+
+![Account Button 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Account%20Button%202.png)
+
+![Account Button 3](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Account%20Button%203.png)
+
+![Account Button 4](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Account%20Button%204.png)
+
+### **Settings**
+![Settings 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Settings%201.png)
+
+![Settings 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Settings%202.png)
+
+![Settings 3](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Settings%203.png)
+
+![Settings 4](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Settings%204.png)
+
+![Settings 5](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Settings%205.png)
+
+### **Signup**
+![Signups 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Signups%201.png)
+
+![Signups 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Signups%202png)
+
+![Signups 3](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Signups%203.png)
+
+### **Footer**
+![Footer 1](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Footer%201.png)
+
+![Footer 2](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/Footer%202.png)
 
 ## JavaScript Implementation
 1) **Homepage:** Search terms entered into the search bar are converted into an array of strings which will be saved.
@@ -48,7 +112,7 @@ The user interface for Conway's PlayGround may be accessed at this [link](https:
 4) **Backpack:** The backpack saves the user's projects by making them JS objects. Within these objects are saved the project's name, description, search terms/tags, and the pattern of the lifeform.
 5) **Project View:** Like the backpack, it simply displays more information on a specific project using the same object.
 5) **Project Edit:** The project edit page mainly uses JS to simulate Conway's GoL. It currently uses a matrix of 0s and 1s to represent live and dead cells, and each time step applies the rules of GoL. The time taken for each timestep can be changed, and when the project is ready to be saved, the user will be prompted to fill out information on the project, which is saved as the object we see in the backpack and project view.
-7) **Settings:** JS will be used to store and retrieve user settings when the page loads. These settings will be saved in a private folder.
+7) **Settings:** JS will be used to store, retrieve, and update user settings when the page loads. These settings will be saved in a private folder.
 8) **Account Sign-Up/Log-In:** JS will be used for form validation. For Log-in, it will refer to a private folder with account information and compare it to the user's input. If there is a match, then the user is logged in. For Sign-up, the user will enter information, which will be saved to the private folder.
 
 
@@ -73,9 +137,3 @@ Similar to the search bar, the filter will compare the tags checked (saved as an
 
 The sign-up page is where users will create or log into their accounts in the website, which will be used to store their creations and saved lifeforms/projects in their backpacks. Additionally, they may also get recommendations in their emails if they consent. In the settings page, they can also adjust information about themselves.
 **Form Type: Text + Email + Password**
-
-### Project Editing & Management
-*to follow*
-
-### Project Sharing
-*to follow*
