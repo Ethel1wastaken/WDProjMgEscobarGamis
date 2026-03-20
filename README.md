@@ -1,6 +1,9 @@
 # MgEscobarGamis Project Proposal (UPDATED)
 
 ## Conway's PlayGround
+
+### Favicon: 
+
 ### Logo:
 ![Project Proposal Logo](./assets/logoFinal.png)
 
@@ -18,10 +21,13 @@
 6) **Settings:** You can customize the look of the website, as well as various settings for project management and editing. Once you save your settings, they will apply as long as you are signed in.
 7) **Account Sign-up/Log-in:** A page which allows you to sign up/log in in order to be able to save your projects. If you are not logged in, you will not be able to save your projects.
 
-
+## [Q4] Final Modification Proposal
+*note that all changes mentioned here have also been updated in their respective sections in this proposal*
 
 ## Wireframe
-The user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAG2zR02FDs/DpkxQuONIKW5XFavxaDppg/edit?utm_content=DAG2zR02FDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
+The user interface for Conway's PlayGround may be accessed at this [link](https://www.canva.com/design/DAHEEYJKSPg/3VYswU89ZBSKnssl3K1U6A/edit?utm_content=DAHEEYJKSPg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton). Note that the link is only accessible by accounts under the PSHS Canva Education Team.
+
+### **UPDATE: All wireframes have been revised**
 
 ### **Home Page**
 ![Account Home Page](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page.png "Home Page")
@@ -31,58 +37,6 @@ The user interface for Conway's PlayGround may be accessed at this [link](https:
 
 ### Home Page (Search Bar)
 ![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20[Search].png)
-
-### Home Page (Search Bar - Filters)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20[Search]%20(2).png)
-
-### Backpack
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack.png)
-
-### Backpack - Uncollapsed
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack%20-%20Uncollapsed.png)
-
-### Backpack - My Creations
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Backpack%20-%20Uncollapsed%20(2).png)
-
-### View Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/File%20View.png)
-
-### Create Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Create%20Project.png)
-
-### Save Project
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Save%20Project.png)
-
-### Footer (found in home page)
-![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Footer.png)
-
-
-### UPDATE: HTML Forms
-
-### Search Bar Results - Lifestyle 
-![Search Bar Results - Lifestyle](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Lifeforms%20[Search%20Bar](1).png)
-
-### Search Bar Results - Projects
-![Search Bar Results - Projects](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Projects%20[Search%20Bar].png)
-
-### Filter Results - Lifestyle 
-![Filter Results - Lifestyle](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Lifeforms%20[Filters].png)
-
-### Filter Results - Projects 
-![Filter Results - Projects](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Search%20Results%20-%20Projects%20[Filters].png)
-
-### Updated Home Page with Accounts Button
-![Updated Home Page with Accounts Button](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Home%20Page%20-%20Accounts.png)
-
-### Accounts Button (No Account) -> Sign Up
-![Sign Up Page](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Account%20Sign%20Up%20-%20Sign%20Up.png)
-
-### Accounts Button (No Account) -> Log In
-![Log In Page](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Account%20Sign%20Up%20-%20Log%20In.png)
-
-### Accounts Button (With Account) -> Settings
-![Settings](./assets/[CS3]%20Q3%20Updated%20Project%20Proposal/Settings.png)
-
 
 
 ## JavaScript Implementation
