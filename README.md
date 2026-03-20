@@ -30,7 +30,9 @@ The user interface for Conway's PlayGround may be accessed at this [link](https:
 ### **UPDATE: All wireframes have been revised**
 
 ### **Home Page**
-![Account Home Page](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page.png "Home Page")
+![Home Page](./assets/[CS3]%20Q4%20Updated%20Project%20Proposal/[Light]%20Home%20#1.png)
+
+![Home Page](,/asse)
 
 ### Home Page (Search Bar)
 ![Search via Filters](./assets/[CS3]%20Q2%20Project%20Proposal/Home%20Page%20w_%20dropdown.png)
