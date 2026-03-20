@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="movies">
+        <fieldset form="movies">
+            <legend>Add a Movie</legend>
+                <label for="Title">Title</label><br>
+                <input type="text" id="Title" required><br><br>
+                
+
+                <label for="Year">Year</label><br>
+                <input type="number" id="Year" required><br><br>
+
+                <label for="Genre">Genre</label><br>
+                <select id="Genre" required>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Anime">Anime</option>
+                </select><br><br>
+
+                Rating<br>
+                    <input type="radio" id="1star" name="rating" value="1star">
+                    <input type="radio" id="2star" name="rating" value="2star">
+                    <input type="radio" id="3star" name="rating" value="3star">
+                    <input type="radio" id="4star" name="rating" value="4star">
+                    <input type="radio" id="5star" name="rating" value="5star"><br><br>
+                
+                <input type="submit" value="Add Movie">
+        </fieldset>
+    </form>
+    
+    
+    
+
+</body>
+</html>
