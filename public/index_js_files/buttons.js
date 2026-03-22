@@ -95,6 +95,33 @@ export const attachButtonHandlers = () => {
         panel.classList.toggle('collapsed');
         btn.textContent = panel.classList.contains('collapsed') ? '▶' : '▼';
     };
+
+    document.getElementById('newPattern').onclick = () => {
+        saveUndo();
+        for (let r = 0; r < state.grid.length; r++) state.grid[r].fill(0);
+        state.gen = 0;
+        renderGrid({ pattern: state.grid });
+        updateUI();
+        updateTime();
+        state.orig = copy(state.grid);
+        
+        document.getElementById('patternName').value = 'Pattern';
+        document.getElementById('patternDesc').value = '';
+        document.getElementById('patternTags').value = '';
+    };
+
+    document.getElementById('saveBackpack').onclick = () => {
+        const patternData = {
+            pattern: copy(state.orig),
+            title: document.getElementById('patternName').value || 'Pattern',
+            description: document.getElementById('patternDesc').value || '',
+            tags: document.getElementById('patternTags').value.split(',').map(t => t.trim()).filter(t => t) || [],
+            timestamp: new Date().toISOString()
+        };
+        const key = `pattern_${Date.now()}`;
+        localStorage.setItem(key, JSON.stringify(patternData));
+        alert('Pattern saved to Backpack!');
+    };
 };
 
 // Setup pattern info

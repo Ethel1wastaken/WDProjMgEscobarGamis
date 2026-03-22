@@ -98,43 +98,124 @@
             })
         }
 
-        // Load patterns from backpack localStorage
+        // Load saved patterns from localStorage
         const loadBackpack = () => {
-            const backpack = JSON.parse(localStorage.getItem('backpack') || '{"myCreations": [], "recents": [], "otherCreators": []}')
+            const myCreations = [];
+            
+            // Get all saved patterns from localStorage (pattern_*)
+            for (let key in localStorage) {
+                if (key.startsWith('pattern_')) {
+                    try {
+                        const p = JSON.parse(localStorage.getItem(key));
+                        myCreations.push({ ...p, key });
+                    } catch (e) {
+                        console.error('Error parsing pattern:', key, e);
+                    }
+                }
+            }
+            
+            // Sort by timestamp (newest first)
+            myCreations.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
             
             const renderPatternList = (patterns, containerId) => {
-                const container = document.getElementById(containerId)
+                const container = document.getElementById(containerId);
                 if (!patterns || patterns.length === 0) {
-                    container.innerHTML = '<p>No patterns in this section.</p>'
-                    return
+                    container.innerHTML = '<p>No patterns in this section.</p>';
+                    return;
                 }
-                const list = document.createElement('ul')
-                list.style.listStyle = 'none'
-                list.style.padding = '8px 12px'
+                
+                const list = document.createElement('div');
+                list.style.padding = '8px 12px';
+                
                 patterns.forEach((p, idx) => {
-                    const li = document.createElement('li')
-                    li.style.padding = '6px 0'
-                    li.style.cursor = 'pointer'
-                    li.style.borderBottom = '1px solid rgba(0,0,0,0.1)'
-                    li.innerText = p.title || `Pattern ${idx + 1}`
-                    li.onclick = () => {
-                        localStorage.setItem('selectedPattern', JSON.stringify(p))
-                        window.location.href = './index.html'
-                    }
-                    li.onmouseover = () => li.style.background = 'rgba(0,0,0,0.1)'
-                    li.onmouseout = () => li.style.background = 'none'
-                    list.appendChild(li)
-                })
-                container.innerHTML = ''
-                container.appendChild(list)
-            }
-
-            renderPatternList(backpack.recents, 'recentsContent')
-            renderPatternList(backpack.myCreations, 'myCreationsContent')
-            renderPatternList(backpack.otherCreators, 'otherCreatorsContent')
-        }
-
-        loadBackpack()
+                    const item = document.createElement('div');
+                    item.style.padding = '12px';
+                    item.style.marginBottom = '8px';
+                    item.style.border = '1px solid rgba(0,0,0,0.2)';
+                    item.style.borderRadius = '4px';
+                    item.style.cursor = 'pointer';
+                    item.style.transition = '0.2s';
+                    item.style.background = 'rgba(255,255,255,0.5)';
+                    item.style.display = 'flex';
+                    item.style.justifyContent = 'space-between';
+                    item.style.alignItems = 'flex-start';
+                    
+                    const content = document.createElement('div');
+                    content.style.flex = '1';
+                    
+                    const title = document.createElement('div');
+                    title.style.fontWeight = '600';
+                    title.style.fontSize = '14px';
+                    title.style.marginBottom = '4px';
+                    title.innerText = p.title || `Pattern ${idx + 1}`;
+                    
+                    const desc = document.createElement('div');
+                    desc.style.fontSize = '12px';
+                    desc.style.color = '#666';
+                    desc.style.marginBottom = '4px';
+                    desc.innerText = p.description || '(no description)';
+                    
+                    const tags = document.createElement('div');
+                    tags.style.fontSize = '11px';
+                    tags.style.color = '#999';
+                    tags.innerText = p.tags && p.tags.length ? `Tags: ${p.tags.join(', ')}` : '(no tags)';
+                    
+                    content.appendChild(title);
+                    content.appendChild(desc);
+                    content.appendChild(tags);
+                    
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.innerText = 'Open in Maker';
+                    btn.style.padding = '6px 12px';
+                    btn.style.background = '#333';
+                    btn.style.color = 'white';
+                    btn.style.border = 'none';
+                    btn.style.borderRadius = '3px';
+                    btn.style.cursor = 'pointer';
+                    btn.style.fontSize = '12px';
+                    btn.style.fontWeight = '600';
+                    btn.style.marginLeft = '12px';
+                    btn.style.whiteSpace = 'nowrap';
+                    btn.style.opacity = '0';
+                    btn.style.transition = '0.2s';
+                    btn.style.zIndex = '10';
+                    
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        localStorage.setItem('selectedPattern', JSON.stringify(p));
+                        window.location.href = './index.html';
+                    };
+                    
+                    btn.onmouseover = () => btn.style.background = '#555';
+                    btn.onmouseout = () => btn.style.background = '#333';
+                    
+                    item.appendChild(content);
+                    item.appendChild(btn);
+                    
+                    item.onmouseover = () => {
+                        item.style.background = 'rgba(0,0,0,0.1)';
+                        btn.style.opacity = '1';
+                    };
+                    item.onmouseout = () => {
+                        item.style.background = 'rgba(255,255,255,0.5)';
+                        btn.style.opacity = '0';
+                    };
+                    
+                    list.appendChild(item);
+                });
+                
+                container.innerHTML = '';
+                container.appendChild(list);
+            };
+            
+            // Display patterns
+            renderPatternList(myCreations, 'myCreationsContent');
+        };
+        
+        // Load backpack on page load
+        loadBackpack();
     </script>
 
 </body>
