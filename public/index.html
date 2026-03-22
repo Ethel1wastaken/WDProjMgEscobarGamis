@@ -28,7 +28,7 @@
 
     <script src="../dropdown.js" defer></script>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="index_js_files/main.js"></script>
 
     <title>Conway's Game of Life</title>
 </head>
@@ -63,35 +63,55 @@
         </nav>
     </header>
 
-    <div class="controls">
-        <button id="mode" style="position: relative;">
-            <span id="modeText">Edit Mode</span>
-            <span style="display: block; font-size: 10px; font-weight: normal; font-style: italic;color: #666; margin-top: 2px;">Press M to toggle</span>
-        </button>
-        <button id="generate">Generate Random Grid</button>
-        <button id="newPattern">New Pattern</button>
-        <button id="saveToBackpack">Save to Backpack</button>
-
-        <div class="infoSpan">
-            <span id="generation">Generation: 0</span>
-            <span id="population">Population: 0</span>
-        </div>
-    </div>
-
-    <main class="container">
-        <aside id="patternInfo" class="pattern-info">
-            <h3 id="patternTitle">Pattern</h3>
-            <p id="patternDescription">No pattern loaded.</p>
-            <p id="patternTags"></p></br/>
-
-            <button id="start">▶</button>
-            <button id="reset">↩</button>
-            <button id="next">⏭</button>
-            <button id="clear">🗑</button>
-        </aside>
+    <main class="grid-container">
         <section id="gridWrapper" class="grid-wrapper"></section>
+
+        <!-- Top Left: Playback -->
+        <div class="controls-playback">
+            <button id="prevGen" title="Previous">−1</button>
+            <button id="playPause" title="Play">▶</button>
+            <button id="nextGen" title="Next">+1</button>
+            <button id="clearGrid" title="Clear">Clear</button>
+            <button id="restartGen" title="Restart">↩</button>
+        </div>
+
+        <!-- Top Left: Mode -->
+        <div class="controls-top-left">
+            <button id="viewMode" title="View">View</button>
+            <button id="selectMode" title="Select">Select</button>
+            <button id="drawMode" title="Draw">Draw</button>
+        </div>
+
+        <!-- Top Right: Pattern Info -->
+        <div class="controls-top-right">
+            <div class="pattern-info">
+                <button id="togglePatternInfo" class="toggle-btn">▼</button>
+                <div id="patternPanel" class="pattern-panel">
+                    <div class="info-item">
+                        <label>Name:</label>
+                        <input type="text" id="patternName" value="Pattern">
+                    </div>
+                    <div class="info-item">
+                        <label>Description:</label>
+                        <textarea id="patternDesc" rows="2"></textarea>
+                    </div>
+                    <div class="info-item">
+                        <label>Last Edit:</label>
+                        <span id="lastEdit">—</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Tags:</label>
+                        <input type="text" id="patternTags" placeholder="tag1, tag2">
+                    </div>
+                </div>
+            </div>
+            <div class="counters">
+                <div id="generation">Gen: 0</div>
+                <div id="population">Pop: 0</div>
+            </div>
+        </div>
+
+
     </main>
-    <br/>
-    <br/>
 </body>
 </html>
