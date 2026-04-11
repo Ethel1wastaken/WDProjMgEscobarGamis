@@ -9,24 +9,17 @@
 
         <title> Conway's Playground </title>
         <link rel = "icon" href= "./assets/temporary-logo-turtle.png" type="image/png">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles2.css">
+        <link rel="stylesheet" href="./joanna's testing grounds/dropdown.css">
 
         <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
         <style>
-            .fa-angle-down {
-                color: inherit;
-            }
-
             .fa-search {
-                color: inherit;
-            }
-
-            .fa-filter {
                 color: inherit;
             }
         </style>
 
-        <script src="dropdown.js" defer></script>
+        <script src="./joanna's testing grounds/dropdown.js" defer></script>
         <script src="home.js" defer></script>
         <script type="module" src="home-search.js" defer></script>
     </head>
@@ -40,18 +33,15 @@
                         <h2 class="inline-header"> Conway's Playground </h2>
                     </div>
                     
-                    <div class="dropdown">
-                        <button class="dropbtn"> Create <i class="fa fa-angle-down"></i> </button>
-                        <div class="dropdown-content">
-                            <a href="public/index.html"> Maker </a>
-                            <a href="public/backpack.html"> Backpack </a>
-                        </div>
+                    <div class="buttons-container">
+                        <button onclick="window.location.href='./public/index.html'"> Maker </button><button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
                     </div>
 
                     <div class="dropdown">
-                        <button class="dropbtn" id="profile"> <i class="fa fa-user fa-5x"></i></button>
+                        <button class="dropbtn" id="profile" onclick="dropdown()"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
                         <div class="dropdown-content">
                             <p id="usernameOutput"> </p>
+                            <hr width="100%" size="1">
                             <a href="public/signup.html"> Switch Accounts </a> <!-- make dropdown in the future -->
                             <a class="noAccount" href="public/settings.html"> Settings </a>
                             <a href="public/signup.html" onclick="logOut()"> Log Out </a>
@@ -61,18 +51,17 @@
             </nav>
         </header>
 
-        <section id="searchBar">
-            <div>
-                <form id="searchForm" action="public/search.html" method="get">
-                    <div class="field-wrap">
-                        <i class="fa fa-search"></i>
-
-                        <input id="searchInput" name="q" type="search" placeholder="Search Bar">
-
-                        <a> <i class="fa fa-filter"></i> </a>
-                    </div>
-                </form>
+        <section>
+            <div class="homePageContainer">
             </div>
+        </section>
+
+        <section>
+            <h1> Conway's Playground </h1>
+            <hr width="100%" size="1">
+
+            <p> description </p>
+             <hr width="100%" size="1">
         </section>
 
         <section id="featuredPages">
@@ -81,9 +70,28 @@
             <div id="featuredOutput">
                 <p> insert files </p>
             </div>
+             <hr width="100%" size="1">
         </section>
 
-        <!-- featured: featured projects (w/ author names, labels, and sneak peeks)-->
+        <section>
+            <h1> Patterns</h1>
+
+            <section id="searchBar">
+                <form id="searchForm" action="public/search.html" method="get">
+                    <div class="field-wrap">
+                        <i class="fa fa-search"></i>
+                        <input id="searchInput" name="q" type="search" placeholder="Search Bar">
+                    </div>
+                </form>
+            </section>
+
+            <div id="patternsDisplay">
+                <!-- output patterns here // all are individual divs displayed in flex -->
+            </div>
+
+            <hr width="100%" size="1">
+
+        </section>
 
         <script src="public/signup.js"></script>
         <script src="home.js"></script>
