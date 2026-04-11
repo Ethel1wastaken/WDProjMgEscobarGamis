@@ -39,10 +39,10 @@
 
                     <div class="dropdown">
                         <button class="dropbtn" id="profile" onclick="dropdown()"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="accountsDropdown">
                             <p id="usernameOutput"> </p>
                             <hr width="100%" size="1">
-                            <a href="public/signup.html"> Switch Accounts </a> <!-- make dropdown in the future -->
+                            <button> Switch Accounts </button>
                             <a class="noAccount" href="public/settings.html"> Settings </a>
                             <a href="public/signup.html" onclick="logOut()"> Log Out </a>
                         </div>
@@ -56,7 +56,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="description">
             <h1> Conway's Playground </h1>
             <hr width="100%" size="1">
 
@@ -98,36 +98,41 @@
     </body>
 
     <footer>
-        
         <section>
-            <h1> References </h1>
+            <div class="copyright">
 
-            <p> Special thanks to everyone who made this website possible! </p>
-        </section>
+                <div class="img-container">
+                    <img src="./assets/logoFinal.png" alt="Conway's Logo" width="50px" height="50px"> <h2> Conway's Playground </h2>
+                </div>
 
-        <h1 style="padding: 0 70px;"> Contact Us </h1>
-
-        <section class="socmed">
-            
-            <div>
-                <ul>
-                    <li> <a href="#"> socmed 1 </a> </li>
-                    <li> <a href="#"> socmed 2 </a> </li>
-                    <li> <a href="#"> socmed 3 </a> </li>
-                </ul>
-
+                <p> <i class="fa fa-copyright" aria-hidden="true"></i> 2025-2026 Joanna Escobar, Elijah Gamis. All rights reserved. No part of this publication may be reproduced without permission </p>
             </div>
-                
-            <div>
-                <ul>
-                    <li> email address </li>
-                    <li> landline </li>
-                    <li> copyright </li>
-                </ul>
+
+            <div class="socmed">
+                <h1> Socials </h1>
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook-official" aria-hidden="true"></i> </a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                <a href="https://x.com/"> <i class="fa fa-twitter" aria-hidden="true"></i> </a>
+                <a href="https://github.com/Ethel1wastaken/WDProjMgEscobarGamis"> <i class="fa fa-github" aria-hidden="true"></i> </a>
             </div>
-        </section>
 
-        <p class="copyright"> copyright </p>
+            <div class="contacts">
+                <h1> Contact Us </h1> <!-- email telephone location-->
+                <p><i class="fa fa-envelope-o" aria-hidden="true"></i> b2029jezescobar@pshs.edu.ph</p>
+                <p><i class="fa fa-envelope-o" aria-hidden="true"></i> b2029egtgamis@pshs.edu.ph</p>
+            </div>
 
+            <div>
+                <h1> References </h1>
+
+                <p> Special thanks to everyone who made this website possible! </p>
+            </div>
+        </section>      
     </footer>
+
+    <script>
+        function dropdown() {
+            accountsDropdown.classList.toggle("show");
+        }
+    </script>
 </html>

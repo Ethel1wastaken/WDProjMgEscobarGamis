@@ -1,3 +1,8 @@
+ @font-face {
+  font-family: headerFont; /* set name */
+  src: url(./fonts/PressStart2P.ttf); /* url of the font */
+}
+
 html {
     font-family: 'Verdana', Geneva, Tahoma, sans-serif;
     overflow: scroll;
@@ -14,6 +19,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 3;
 }
 
 .navbar {
@@ -29,7 +35,7 @@ nav {
     margin: auto 0;
 }
 
-.navbar #siteLogo h2 { /*add funky font*/
+.navbar #siteLogo h2 {
     margin: auto 0;
 }
 
@@ -76,7 +82,7 @@ div.buttons-container button:hover {
 }
 
 .dropdown-content {
-    /*display: none;*/
+    display: none;
     position: absolute;
     background-color: #ffaaea;
     min-width: 160px;
@@ -93,6 +99,16 @@ div.buttons-container button:hover {
     padding: 10px;
 }
 
+.dropdown-content button {
+    background-color: inherit;
+    border: none;
+    padding: 10px;
+    color: inherit;
+    font-size: inherit;
+    width: 100%;
+    text-align: left;
+}
+
 .dropdown-content a {
     color: inherit;
     padding: 12px 16px;
@@ -104,11 +120,13 @@ div.buttons-container button:hover {
 .dropdown-content hr {
     color: #d02392;
 }
-.dropdown a:hover {
+.dropdown a:hover, .dropdown button:hover {
     background-color: #eca3da;
 }
 
-.show {display: block;}
+.show {
+    display: block;
+}
 
 header + section {
     padding-top: 100px;
@@ -116,6 +134,10 @@ header + section {
 
 section {
     margin: 10px 70px;
+}
+
+.description h1 {
+    font-family: "headerFont", sans-serif;
 }
 
 #featuredOutput {
@@ -137,7 +159,6 @@ section {
     padding: 15px;
     font-weight: bold;
     font-size: 1.05em;
-    z-index: 1;
     box-shadow: 10px 10px 10px #b570a3;
 }
 
@@ -167,7 +188,50 @@ section {
 }
 
 footer {
-    margin-top: 40px;
+    position: absolute;
     background-color: #ffc7b6;
-    padding-top: 30px;
+    width: 100%;
+    left: 0;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.socmed a {
+    font-size: 2em;
+    height: 43px;
+    width: 43px;
+    background-color: #ffeee9;
+    border-radius: 50%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: auto 0;
+    margin: 0 10px;
+    color: #4d0557;
+}
+
+.socmed a:hover {
+    color: #70007c;
+    transform: translateY(-5px);
+}
+
+.socmed a:active {
+    color: #4d0557;
+    transform: translateY(5px);
+}
+
+footer div.img-container {
+    display: flex;
+}
+
+footer div.img-container img, footer div.img-container h2 {
+    padding: auto 0;
+}
+
+.contacts p {
+    margin-left: 25px;
+}
+
+footer section div {
+    margin: 50px auto;
 }
