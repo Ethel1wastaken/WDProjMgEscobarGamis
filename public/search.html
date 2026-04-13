@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Search Patterns</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../dropdown.css">
+    <link rel="stylesheet" href="../styles2.css">
+    <link rel="stylesheet" href="../joanna's testing grounds/dropdown.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script src="../dropdown.js" defer></script>
+
+    <style>
+        .fa-moon-o {
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,30 +23,39 @@
                         <h2 class="inline-header"> Conway's Playground </h2>
                     </div>
                     
-                    <div class="dropdown">
-                        <button class="dropbtn"> Create <i class="fa fa-angle-down"></i> </button>
-                        <div class="dropdown-content">
-                            <a href="./index.html"> Maker </a>
-                            <a href="./backpack.html"> Backpack </a>
-                        </div>
+                    <div class="buttons-container">
+                        <button onclick="window.location.href='./index.html'"> Maker </button><button onclick="window.location.href='./backpack.html'"> Backpack </button>
                     </div>
 
-                    <div id="accountsButton">
-                        <a href="./signup.html"><button> <i class="fa fa-user fa-5x"></i></button></a>
+                    <div class="dropdown">
+                        <button class="dropbtn" id="profile" onclick="dropdown()"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div class="dropdown-content" id="accountsDropdown">
+                            <p id="usernameOutput"> </p>
+                            <hr width="100%" size="1">
+                            <button> Switch Accounts </button>
+                            <a class="noAccount" href="./settings.html"> Settings </a>
+                            <a href="./signup.html" onclick="logOut()"> Log Out </a>
+                        </div>
                     </div> 
                 </div>
             </nav>
-            <h1>Search Patterns</h1>
     </header>
 
     <section id="searchSection">
+        <i class="fa fa-search"></i>
         <input id="searchPageInput" type="search" placeholder="Search patterns">
         <button id="searchBtn">Search</button>
+    </section>
+
+    <section>
+        <h2> Search Results </h2>
     </section>
 
     <section id="searchResults">
     </section>
 
     <script type="module" src="search-page.js"></script>
+    <script src="../joanna's testing grounds/dropdown2.js"></script>
+    <script src="../home.js" defer></script>
 </body>
 </html>
