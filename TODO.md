@@ -1,30 +1,6 @@
 # Project TODO
 
-## Friday, January 9
-- [] HTML of 5 initial webpages
-- [] CSS of 5 initial webpages
-- [] CS3 Updated Project Proposal
-- [] CS3 Internal Organization
-- [] Website Navbar
-
-## Sunday, January 11
-- [] CSS Externalize
-- [] CSS Light & Dark Mode
-- [] JS of Patterns
-
-## Wednesday, January 14
-- [] HTML Non-Q2 files
-- [] HTML Forms Part
-- [] JS Search Bar
-
-## Friday, January 16
-- [] CSS Non-Q2 files
-
-## Sunday, January 18
-- [] JS Infinite Grid (Pt. 1/3)
-
-## Tuesday, January 20
-- [] CS3 Project Submission
+- [] finish
 
 # Website Plans
 - index.html // new file (change to diff file name)
