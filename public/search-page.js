@@ -34,18 +34,15 @@ const renderResults = results => {
     const out = document.getElementById('searchResults')
     out.innerHTML = ''
     results.forEach(p => {
-        const card = document.createElement('div')
-        card.className = 'patternCard'
+        const card = document.createElement('button')
+        card.className = 'pattern-card'
+        card.addEventListener('click', () => { try { localStorage.setItem('selectedPattern', JSON.stringify(p)) } catch (e) {} window.location.href = './index.html' })
         const title = document.createElement('h3')
         title.innerText = p.title || 'Untitled'
         const desc = document.createElement('p')
         desc.innerText = p.description || ''
-        const btn = document.createElement('button')
-        btn.innerText = 'Open in Maker'
-        btn.addEventListener('click', () => { try { localStorage.setItem('selectedPattern', JSON.stringify(p)) } catch (e) {} window.location.href = './index.html' })
         card.appendChild(title)
         card.appendChild(desc)
-        card.appendChild(btn)
         out.appendChild(card)
     })
 }
