@@ -21,6 +21,14 @@
             color: inherit;
         }
 
+        .fa-pencil-square-o {
+            color: inherit;
+        }
+
+        .fa-eye-slash {
+            color: inherit;
+        }
+
         .settings {
         margin-top: -150px;
         }
@@ -125,10 +133,40 @@
                 <h3> <b> Account Details </b></h3>
                 
                 <div class="profileDetails"> <!-- display as a box like the discord one-->
-                    <label> <b> Username: </b> <span id="username"></span> <!-- output via javascript--> <button onclick="userEdit()"> Edit </button> </label></br/>
-                    <label> <b> Email: </b> <span id="email"></span><!-- output via javascript--> <button onclick="mailEdit()"> Edit </button> </label></br/>
-                    <label> <b> Password: </b> <span id="password"></span><!-- output via javascript--> <button onclick="passEdit()"> Edit </button> </label></br/>
+
+                    <label> <b> Username: </b></label></br/> 
+
+                    <div>
+                        <span id="username"></span> <!-- output via javascript-->
+                        <button onclick="userEdit()"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></br/>
+                    </div>
+
+                    <label> <b> Email: </b></label></br/>
+
+                    <div>
+                        <span id="email"></span><!-- output via javascript-->
+                        <button onclick="mailEdit()"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></br/> 
+                    </div>
+
+                    <label> <b> Password: </b></label></br/>
+
+                    <div>
+                        <span id="password"></span><!-- output via javascript-->
+
+                        <div class="button-group">
+                            <button class="passwordButton" onclick="passwordOpen()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+                            <button onclick="passEdit()"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></br/>
+                        </div>
+                    </div>
                 </div></br/>
+                
+                <div class="disableAccount" style="display: flex">
+                    <h3> <b> Disable Account </b></h3>
+                    <button> Delete Profile </button>
+                </div>
+
+                <p class="settingsOutput"> NOTE: Disabling your account means permanently deleting all data and files associated with the account. Proceed with caution, as this process is irreversible. </p>
+                
             </div>
         </section>
     </div>
