@@ -7,9 +7,9 @@
     <meta name="keywords" content="Conway's Game of Life">
     <meta name="author" content="Joanna Escobar, Elijah Gamis">
     
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles2.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="../dropdown.css">
+    <link rel="stylesheet" href="../joanna's testing grounds/dropdown.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -24,6 +24,8 @@
         .fa-filter {
             color: inherit;
         }
+
+
     </style>
 
     <script src="../dropdown.js" defer></script>
@@ -36,31 +38,28 @@
 <body>
     <header>
         <nav>
-            <div class="navbar">
-                <div id="siteLogo">
-                    <a href="../home.html"> <img src="../assets/logoFinal.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"></a>
-                    <h2 class="inline-header"> Conway's Playground </h2>
-                </div>
-                    
-                <div class="dropdown">
-                    <button class="dropbtn"> Create <i class="fa fa-angle-down"></i> </button>
-                    <div class="dropdown-content">
-                        <a href="./index.html"> Maker </a>
-                        <a href="./backpack.html"> Backpack </a>
+                <div class="navbar">
+                    <div id="siteLogo">
+                        <a href="../home.html"> <img src="../assets/logoFinal.png" alt="Logo" title="Conway's Playground Logo" width="90vw" height="90vh"></a>
+                        <h2 class="inline-header"> Conway's Playground </h2>
                     </div>
-                </div>
+                    
+                    <div class="buttons-container">
+                        <button onclick="window.location.href='./index.html'"> Maker </button><button onclick="window.location.href='./backpack.html'"> Backpack </button>
+                    </div>
 
-                <div class="dropdown">
-                    <button class="dropbtn" id="profile"> <i class="fa fa-user fa-5x"></i></button>
-                        <div class="dropdown-content">
+                    <div class="dropdown">
+                        <button class="dropbtn" id="profile" onclick="dropdown()"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div class="dropdown-content" id="accountsDropdown">
                             <p id="usernameOutput"> </p>
-                            <a href="signup.html"> Switch Accounts </a> <!-- make dropdown in the future -->
-                            <a class="noAccount" href="settings.html"> Settings </a>
-                            <a href="signup.html" onclick="logOut()"> Log Out </a>
+                            <hr width="100%" size="1">
+                            <button> Switch Accounts </button>
+                            <a class="noAccount" href="./settings.html"> Settings </a>
+                            <a href="./signup.html" onclick="logOut()"> Log Out </a>
                         </div>
-                </div> 
-            </div>
-        </nav>
+                    </div> 
+                </div>
+            </nav>
     </header>
 
     <main class="grid-container">
@@ -117,5 +116,7 @@
 
 
     </main>
+
+    <script src="../joanna's testing grounds/dropdown2.js"></script>
 </body>
 </html>

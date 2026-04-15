@@ -18,6 +18,15 @@ function settingsAccount() {
 }
 
 //SETTINGS APPEARANCE
+function closeNav() {
+    document.getElementById("settingsSidebar").classList.remove("open");
+    document.getElementById("settingsMain").classList.remove("open");
+}
+
+function openNav() {
+    document.getElementById("settingsSidebar").classList.add("open");
+    document.getElementById("settingsMain").classList.add("open");
+}
 
 //SETTINGS ACCOUNT
 

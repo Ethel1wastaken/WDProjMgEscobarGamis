@@ -9,7 +9,22 @@
 
     <title> Account Sign Up </title>
  
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles2.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+
+    <style>
+        .fa-bars {
+            color: inherit;
+        }
+
+        .fa-home {
+            color: inherit;
+        }
+
+        .settings {
+        margin-top: -150px;
+        }
+    </style>
 
 </head>
 <body>
@@ -50,18 +65,25 @@
 
     <!-- visible section -->
 
-    <div class="sidebar"> <!-- fixed side navigation -->
-        <a href="../home.html"> Home </a>
+    <div class="sidebar open" id="settingsSidebar"> <!-- collapsible  side navigation -->
+        <div style="display: flex">
+            <button class="exit" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button class="home" onclick="window.location.href='../home.html'"> <i class="fa fa-home" aria-hidden="true"></i> </button>
+        </div>
         
         <h2> Settings </h2>
 
         <div class="sidebarButtons">
-            <button onclick="settingsAppearance()"> Appearance </button>
-            <button onclick="settingsAccount()"> Data & Privacy </button>
+            <button onclick="settingsAppearance()" class="main-button"> Appearance </button>
+            <button onclick="settingsAccount()" class="main-button"> Data & Privacy </button>
         </div>
     </div>
 
-    <div class="settings"> <!-- page main content-->
+    <div class="sidebarArrow"> <!-- arrow button for when sidebar is closed-->
+        <button class="arrowButton" id="openSidebar" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="settings open" id="settingsMain"> <!-- page main content-->
         <section> 
             <h1> Settings </h1>
 
@@ -82,7 +104,7 @@
                 
                 <div>
                     <p> 
-                        <b> Backpack Colors </b>
+                        <b> Backpack Theme </b>
                         <!-- insert the 5 choices-->
                     </p>
 

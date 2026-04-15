@@ -22,7 +22,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
 }
 
 .navbar {
@@ -417,6 +417,145 @@ span.req {
     text-decoration: underline;
 }
 
+/*SETTINGS*/
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #ffc7b6;
+    overflow-x: hidden;
+    padding-top: 25px;
+    transition: 0.75s all;
+}
+
+.sidebar.open {
+    width: 25%;
+}
+
+#settingsSidebar div {
+    margin-bottom: 40px;
+}
+
+.sidebar h2 {
+    margin-left: 25px;
+    font-size: 2em;
+    color: inherit;
+}
+
+.sidebar a {
+    float: right;
+    top: 0;
+    margin: 25px;
+    color: inherit;
+}
+
+.sidebar button.main-button {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 1.25em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: inherit;
+}
+
+.sidebar button:hover {
+    background-color: #ecad9a;
+}
+
+.sidebar .exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 0;
+    height: 40px;
+}
+
+.sidebar .home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    height: 40px;
+    padding: 0;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.sidebar .home:hover {
+    background-color: inherit;
+}
+
+
+.sidebar .home:hover, .sidebar .exit:hover, .sidebarArrow button:hover {
+    color: #991abf;
+}
+
+.sidebarArrow button {
+    position: fixed;
+    left: 0;
+    padding-left: 25px;
+    border: none;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 50px;
+    padding-right: 10px;
+    background-color: #ffc7b6;
+    color: inherit;
+    transition: 0.75s all;
+}
+
+.sidebarArrow button.open {
+    display: none;
+}
+
+.arrowButton i {
+    font-size: 3em;
+}
+
+.settings {
+    padding-top: 20px;
+    transition: margin-left .75s; 
+}
+
+.settings.open {
+    margin-left: 25%;
+}
+
+.settings div {
+    margin-left: 20px;
+}
+
+.settingsAppearance {
+    display: none;
+}
+
+.settingsAccount {
+    display: none;
+}
+
+.settingsAppearance.active {
+    display: block;
+}
+
+.settingsAccount.active {
+    display: block;
+}
 
 /*FOOTER*/
 
