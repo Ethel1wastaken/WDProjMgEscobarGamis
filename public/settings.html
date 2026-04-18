@@ -36,41 +36,6 @@
 
 </head>
 <body>
-
-    <!-- popups for edits-->
-    <dialog id="newUser">
-        <p> Current Username: <span id="currentUsername"></span></p></br/>
-        
-        <form id="userName">
-            <label> New Username <input type="text" id="newUsername" name="newUsername"> </label></br/>
-
-            <input type="submit" value="Submit"></input>
-            <button onclick="userCancel()"> Cancel </button>
-        </form>
-    </dialog>
-
-    <dialog id="newMail">
-        <p> Current Email: <span id="currentEmail"></span></p></br/>
-        
-        <form id="eMail">
-            <label> New Email <input type="text" id="newEmail" name="newEmail"> </label></br/>
-
-            <input type="submit" value="Submit"></input>
-            <button onclick="mailCancel()"> Cancel </button>
-        </form>
-    </dialog>
-
-    <dialog id="newPass">
-        <p> Current Password: <span id="currentPassword"></span></p></br/>
-        
-        <form id="passWord">
-            <label> New Username <input type="text" id="newPassword" name="newPassword"> </label></br/>
-
-            <input type="submit" value="Submit"></input>
-            <button onclick="passCancel()"> Cancel </button>
-        </form>
-    </dialog>
-
     <!-- visible section -->
 
     <div class="sidebar open" id="settingsSidebar"> <!-- collapsible  side navigation -->
@@ -159,10 +124,12 @@
                         </div>
                     </div>
                 </div></br/>
+
+                <p class="settingsOutput"> Please refresh to see changes </p>
                 
                 <div class="disableAccount" style="display: flex">
                     <h3> <b> Disable Account </b></h3>
-                    <button> Delete Profile </button>
+                    <button type="button" onclick="deleteAccount()"> Delete Profile </button>
                 </div>
 
                 <p class="settingsOutput"> NOTE: Disabling your account means permanently deleting all data and files associated with the account. Proceed with caution, as this process is irreversible. </p>
@@ -170,6 +137,49 @@
             </div>
         </section>
     </div>
+
+    <!-- popups for edits-->
+    <dialog id="newUser">
+        <p> <b> Current Username: </b> <span id="currentUsername"></span></p></br/>
+        
+        <form id="userName">
+            <label> <b> New Username: </b> </label></br/>
+            <input type="text" id="newUsername" name="newUsername"></br/>
+
+            <div class="submitButtons">
+                <input type="submit" value="Submit"></input>
+                <button type="button" onclick="userCancel()"> Cancel </button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="newMail">
+        <p> <b> Current Email: </b> <span id="currentEmail"></span></p></br/>
+        
+        <form id="eMail">
+            <label> New Email </label></br/>
+            <input type="text" id="newEmail" name="newEmail"></br/>
+
+            <div class="submitButtons">
+                <input type="submit" value="Submit"></input>
+                <button type="button" onclick="mailCancel()"> Cancel </button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="newPass">
+        <p> <b> Current Password: </b> <span id="currentPassword"></span></p></br/>
+        
+        <form id="passWord">
+            <label> New Username </label></br/>
+            <input type="text" id="newPassword" name="newPassword"></br/>
+
+            <div class="submitButtons">
+                <input type="submit" value="Submit"></input>
+                <button type="button" onclick="passCancel()"> Cancel </button>
+            </div>
+        </form>
+    </dialog>
 
     <script src="settings.js"></script>
 </body>

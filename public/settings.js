@@ -17,7 +17,6 @@ function settingsAccount() {
     appearance.classList.remove("active");
 }
 
-//SETTINGS APPEARANCE
 function closeNav() {
     document.getElementById("settingsSidebar").classList.remove("open");
     document.getElementById("settingsMain").classList.remove("open");
@@ -28,8 +27,7 @@ function openNav() {
     document.getElementById("settingsMain").classList.add("open");
 }
 
-//SETTINGS ACCOUNT
-
+//DETAILS DISPLAY
 let userDisplay = document.getElementById("username");
 let mailDisplay = document.getElementById("email");
 let passDisplay = document.getElementById("password");
@@ -38,78 +36,149 @@ userDisplay.innerHTML += currentAccount.username;
 mailDisplay.innerHTML += currentAccount.email;
 passDisplay.innerHTML += currentAccount.password;
 
-//username edits - NOTE: might make all use only two functions using keyword 'this' in the future
-let username = document.getElementById("currentUsername");
-
-username.innerHTML += currentAccount.username;
-
+//OPEN EDIT BUTTONS
 function userEdit() {
-    document.getElementById("newUser").setAttribute("class", "open");
+    document.getElementById("newUser").showModal();
 }
 
+function mailEdit() {
+    document.getElementById("newMail").showModal();
+}
+
+function passEdit() {
+    document.getElementById("newPass").showModal();
+}
+
+//DIALOGS DISPLAY
+let dialogUserDisplay = document.getElementById("currentUsername");
+let dialogMailDisplay = document.getElementById("currentEmail");
+let dialogPassDisplay = document.getElementById("currentPassword");
+
+dialogUserDisplay.innerHTML += currentAccount.username; 
+dialogMailDisplay.innerHTML += currentAccount.email;
+dialogPassDisplay.innerHTML += currentAccount.password;
+
+//DIALOG CANCEL
 function userCancel() {
-    document.getElementById("newUser").removeAttribute("class");
-}
-
-//email edits
-let email  = document.getElementById("currentEmail");
-
-email.innerHTML += currentAccount.email;
-
-function mailEdit () {
-    document.getElementById("newMail").setAttribute("class", "open");
+    newUser.close();
 }
 
 function mailCancel() {
-    document.getElementById("newMail").removeAttribute("class", "open");
-}
-
-// password edits
-let password  = document.getElementById("currentPassword");
-
-password.innerHTML += currentAccount.password;
-
-function passEdit () {
-    document.getElementById("newPass").setAttribute("class", "open");
+    newMail.close();
 }
 
 function passCancel() {
-    document.getElementById("newPass").removeAttribute("class", "open");
+    newPass.close();
 }
 
-//Process Inputs
+//DIALOGS SUBMISSION
+let userForm = document.getElementById("userName");
+let mailForm = document.getElementById("eMail");
+let passForm = document.getElementById("passWord");
 
-document.getElementById("userName").addEventListener("submit", changeUsername);
-document.getElementById("eMail").addEventListener("submit", changeEmail);
-document.getElementById("passWord").addEventListener("submit", changePassword);
+userForm.addEventListener("submit", changeUser);
+mailForm.addEventListener("submit", changeMail);
+passForm.addEventListener("submit", changePass);
 
-let updatedUsername = document.getElementById("newUsername").value;
-let updatedEmail = document.getElementById("newEmail").value;
-let udpatedPassword = document.getElementById("newPassword").value;
-
-function changeUsername(e) {
+function changeUser(e) {
     e.preventDefault();
 
-    for(let i in createdAccounts) {
-        if(createdAccounts[i].username == currentAccount.username) {
-            currentAccount.username = updatedUsername;
-            createdAccounts[i].username = updatedUsername;
+    if(confirm("Change username?")) {
+        let newUsername = document.getElementById("newUsername").value;
 
-            console.log("Username successfully updated")
+        console.log(`New username: ${newUsername}`);
+
+        //save in the list of accounts in local storage
+        for(let i in createdAccounts) {
+            if(createdAccounts[i].username == currentAccount.username) {
+                createdAccounts[i].username = newUsername; 
+                currentAccount.username = newUsername;
+            }
         }
+
+        localStorage.setItem("accounts", JSON.stringify(createdAccounts));
+
+        //save in current account
+        currentAccount.username = newUsername;
+
+        console.log(currentAccount);
+
+        localStorage.setItem("activeAccount", JSON.stringify(currentAccount));
+
+        document.getElementById("newUser").close();
     }
-
-    localStorage.setItem("accounts", JSON.stringify(createdAccounts));
-
-    console.log("Information stored in local storage");
 }
 
-function changeEmail(e) {
+function changeMail(e) {
     e.preventDefault();
 
+    if(confirm("Change email?")) {
+        let newEmail = document.getElementById("newEmail").value;
+
+        console.log(`New email: ${newEmail}`);
+
+        //save in the list of accounts in local storage
+        for(let i in createdAccounts) {
+            if(createdAccounts[i].email == currentAccount.email) {
+                createdAccounts[i].email = newEmail; 
+                currentAccount.email = newEmail;
+            }
+        }
+
+        localStorage.setItem("accounts", JSON.stringify(createdAccounts));
+
+        //save in current account
+        console.log(currentAccount);
+
+        localStorage.setItem("activeAccount", JSON.stringify(currentAccount));
+
+        document.getElementById("newMail").close();
+    }      
 }
 
-function changePassword(e) {
+function changePass(e) {
     e.preventDefault();
 
+    if(confirm("Change password?")) {
+        let newPassword = document.getElementById("newPassword").value;
+
+        console.log(`New password: ${newPassword}`)
+
+        //save in the list of accounts in local storage
+        for(let i in createdAccounts) {
+            if(createdAccounts[i].password == currentAccount.password) {
+                createdAccounts[i].password = newPassword; 
+                currentAccount.password = newPassword;
+            }
+        }
+
+        localStorage.setItem("accounts", JSON.stringify(createdAccounts));
+
+        console.log(currentAccount);
+
+        localStorage.setItem("activeAccount", JSON.stringify(currentAccount));
+
+        document.getElementById("newPass").close();
+    }
+}
+
+//DISABLE ACCOUNT
+function deleteAccount() {
+    if(confirm("Disable this account?")) {
+        let listOfAccounts = createdAccounts;
+        let activePassword = currentAccount.password;
+        
+        createdAccounts = listOfAccounts.filter(accountSearch);
+
+        function accountSearch(obj) {
+            return obj.password != activePassword;
+        }
+
+        currentAccount = undefined;
+
+        localStorage.setItem("accounts", JSON.stringify(createdAccounts));
+        localStorage.setItem("activeAccount", JSON.stringify(currentAccount));
+
+        window.location.assign("../home.html");
+    }
 }

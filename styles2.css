@@ -703,6 +703,41 @@ input:checked + .slider:before {
     margin-left: 20px;
 }
 
+dialog {
+    position: fixed;
+    border: none;
+    padding: 20px;
+    background-color: #ffaaea;
+}
+
+div.submitButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+dialog input[type="text"] {
+    display: block;
+    margin: 0 auto;
+}
+
+dialog input[type="submit"], dialog button {
+    background-color: #ff3bb9;
+    border: none;
+    border-radius: 5px;
+}
+
+div.submitButtons input:hover, div.submitButtons button:hover {
+    transform: translateY(-5px);
+    background-color: #b41a7e;
+    transition: 0.5s all;
+}
+
+div.submitButtons input:active, div.submitButtons button:active {
+    transform: translateY(5px);
+    transition: 0.5s all;
+}
+
 /*FOOTER*/
 
 footer {
