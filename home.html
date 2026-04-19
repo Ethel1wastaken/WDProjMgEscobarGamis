@@ -21,7 +21,7 @@
         </style>
 
         <script src="./joanna's testing grounds/dropdown2.js" defer></script>
-        <script src="home.js" defer></script>
+        <script src="navbar.js" defer></script>
         <script type="module" src="home-search.js" defer></script>
 
     </head>
@@ -39,16 +39,19 @@
                         <button onclick="window.location.href='./public/index.html'"> Maker </button><button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
                     </div>
 
+                    <dialog id="accountsDisplay" style="z-index: 10;">
+                    </dialog>
+
                     <div class="dropdown">
                         <button class="dropbtn" id="profile" onclick="dropdown()"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
                         <div class="dropdown-content" id="accountsDropdown">
                             <p id="usernameOutput"> </p>
                             <hr width="100%" size="1">
-                            <button> Switch Accounts </button>
+                            <button onclick="displayAcc()"> Switch Accounts </button>
                             <a class="noAccount" href="public/settings.html"> Settings </a>
                             <a href="public/signup.html" onclick="logOut()"> Log Out </a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </nav>
         </header>

@@ -123,12 +123,41 @@ div.buttons-container button:hover {
 .dropdown-content hr {
     color: #d02392;
 }
+
 .dropdown a:hover, .dropdown button:hover {
     background-color: #eca3da;
 }
 
 .show {
     display: block;
+}
+
+#accountsDisplay {
+    position: absolute;
+    width: 250px;
+    left: 800px;
+    top: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: -5px 5px 5px #b570a3;
+    text-align: center;
+}
+
+#accountsDisplay p {
+    font-weight: bold;
+}
+
+#accountsDisplay button {
+    background-color: inherit;
+    border: none;
+    padding: 5px;
+    font-size: inherit;
+    width: 100%;
+}
+
+#accountsDisplay button:hover {
+    background-color: #eca3da;
+    color: #d02392;
 }
 
 /*HOME*/
