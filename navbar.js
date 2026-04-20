@@ -1,5 +1,5 @@
-const currentAccount = JSON.parse(localStorage.getItem("activeAccount"));
-const createdAccounts = JSON.parse(localStorage.getItem("accounts"));
+let currentAccount = JSON.parse(localStorage.getItem("activeAccount"));
+let createdAccounts = JSON.parse(localStorage.getItem("accounts"));
 
 //USERNAME DISPLAY
 let usernameDisplay = document.getElementById("usernameOutput");
@@ -30,12 +30,28 @@ function displayAcc() {
             let accountButton = document.createElement("button");
 
             accountButton.textContent += createdAccounts[i].username;
+            accountButton.setAttribute("onclick", "switchAccount(this)");
 
             display.appendChild(accountButton);
         }
     }
 
     display.show();
+}
+
+//SWITCH ACCOUNTS
+function switchAccount(account2) {
+    let nextAccount = account2.innerHTML;
+
+    for(let i in createdAccounts) {
+        if(createdAccounts[i].username == nextAccount) {
+            currentAccount = createdAccounts[i];
+
+            localStorage.setItem("activeAccount", JSON.stringify(currentAccount));
+
+            location.reload();
+        }
+    }
 }
 
 //DROPDOWN- LOGOUT
