@@ -111,12 +111,25 @@ export const attachButtonHandlers = () => {
     };
 
     document.getElementById('saveBackpack').onclick = () => {
+        // Capture canvas thumbnail
+        let thumbnail = null;
+        const canvas = document.getElementById('gridCanvas');
+        if (canvas) {
+            try {
+                thumbnail = canvas.toDataURL('image/png');
+            } catch (e) {
+                console.error('Failed to capture thumbnail:', e);
+            }
+        }
+
         const patternData = {
             pattern: copy(state.orig),
             title: document.getElementById('patternName').value || 'Pattern',
             description: document.getElementById('patternDesc').value || '',
             tags: document.getElementById('patternTags').value.split(',').map(t => t.trim()).filter(t => t) || [],
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            username: localStorage.getItem('username') || 'Anonymous',
+            thumbnail: thumbnail
         };
         const key = `pattern_${Date.now()}`;
         localStorage.setItem(key, JSON.stringify(patternData));
