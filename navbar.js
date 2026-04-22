@@ -8,6 +8,11 @@ console.log(currentAccount);
 
 usernameDisplay.innerHTML += currentAccount.username;
 
+//DROPDOWN - DISPLAY
+function dropdown() {
+    accountsDropdown.classList.toggle("show");
+}
+
 //DROPDOWN- SWITCH ACCOUNTS
 function displayAcc() {
     let display = document.getElementById("accountsDisplay");
