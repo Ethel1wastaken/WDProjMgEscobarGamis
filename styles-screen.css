@@ -1,0 +1,48 @@
+@media (max-width: 1000px) {
+    section {
+        margin: 0 25px;
+    }
+    
+    .navbar {
+        padding: 0 10px;
+        height: 10vh;
+    }
+
+    .navbar #siteLogo {
+        font-size: 0.5em;
+        padding: auto 0;
+    }
+
+    #siteLogo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    div.buttons-container, div.dropdown {
+        display: none;
+    }
+
+    button.mobile-screen {
+        display: block;
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    button.mobile-screen:hover {
+        background-color: #eca3da;
+        color: #d02392;
+    }
+
+    #navSidebar {
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        background-color: #ffaaea;
+        left: 0;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+}

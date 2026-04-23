@@ -35,7 +35,7 @@
                         <h2 class="inline-header"> Conway's Playground </h2>
                     </div>
                     
-                    <div class="buttons-container">
+                    <div class="buttons-container" id="navbarButtons">
                         <button onclick="window.location.href='./public/index.html'"> Maker </button><button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
                     </div>
 
@@ -52,9 +52,28 @@
                             <a href="public/signup.html" onclick="logOut()"> Log Out </a>
                         </div>
                     </div>
+
+                    <button class="mobile-screen" onclick="openNavbar()"> <i class="fa fa-bars" aria-hidden="true"></i> </button>
                 </div>
             </nav>
         </header>
+
+        <div id="navSidebar">
+
+            <dialog style="z-index: 10;"></dialog>
+            
+            <button> Account </button>
+            <button onclick="window.location.href='./public/index.html'"> Maker </button>
+            <button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
+    
+            <div id="accounts-content" style="display:none">
+                <p id="usernameOutput"> </p>
+                <hr width="100%" size="1">
+                <button onclick="displayAcc()"> Switch Accounts </button>
+                <a class="noAccount" href="public/settings.html"> Settings </a>
+                <a href="public/signup.html" onclick="logOut()"> Log Out </a>
+            </div>
+        </div>
 
         <section>
             <div class="homePageContainer">

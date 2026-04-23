@@ -128,10 +128,6 @@ div.buttons-container button:hover {
     background-color: #eca3da;
 }
 
-.show {
-    display: block;
-}
-
 #accountsDisplay {
     position: absolute;
     width: 250px;
@@ -158,6 +154,21 @@ div.buttons-container button:hover {
 #accountsDisplay button:hover {
     background-color: #eca3da;
     color: #d02392;
+}
+
+.mobile-screen {
+    display: none;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+#navSidebar {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 /*HOME*/

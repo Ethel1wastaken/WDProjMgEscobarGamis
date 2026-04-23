@@ -63,3 +63,10 @@ function switchAccount(account2) {
 function logOut() {
     localStorage.removeItem("activeAccount");
 }
+
+// MOBILE SCREENS
+function openNavbar() {
+    let mobileDisplay = document.getElementById("navSidebar");
+
+    mobileDisplay.classList.toggle("show");
+}
