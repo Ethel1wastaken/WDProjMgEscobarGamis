@@ -163,12 +163,22 @@ div.buttons-container button:hover {
     border: none;
 }
 
-#navSidebar {
-    display: none;
-}
-
 .show {
     display: block;
+}
+
+#navSidebar {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #ffaaea;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: .5s ease;
 }
 
 /*HOME*/
@@ -222,11 +232,13 @@ section {
     font-weight: bold;
     font-size: 1.05em;
     box-shadow: 10px 10px 10px #b570a3;
+    transition: all 0.3 ease;
 }
 
 #featuredOutput button:hover {
     background-color: #eca3da;
     transform: scale(1.1);
+    transition: all 0.3 ease;
 }
 
 #featuredOutput button:active {
@@ -234,7 +246,6 @@ section {
     background-color: #eca3da;
     transform: translateX(10px) translateY(10px);
     box-shadow: none;
-    transition: 0.25s;
 }
 
 #searchBar, #searchSection {

@@ -67,6 +67,14 @@ function logOut() {
 // MOBILE SCREENS
 function openNavbar() {
     let mobileDisplay = document.getElementById("navSidebar");
+    mobileDisplay.style.width = "100%";
+}
 
-    mobileDisplay.classList.toggle("show");
+function closeNavbar() {
+    let mobileDisplay = document.getElementById("navSidebar");
+    mobileDisplay.style.width = "0";
+}
+
+function accountsDropdown() {
+    mobileAccounts.classList.toggle("appear");
 }

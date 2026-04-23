@@ -61,17 +61,20 @@
         <div id="navSidebar">
 
             <dialog style="z-index: 10;"></dialog>
+
+            <button class="exit" onclick="closeNavbar()"><i class="fa fa-times" aria-hidden="true"></i></button>
             
-            <button> Account </button>
-            <button onclick="window.location.href='./public/index.html'"> Maker </button>
-            <button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
-    
-            <div id="accounts-content" style="display:none">
-                <p id="usernameOutput"> </p>
-                <hr width="100%" size="1">
-                <button onclick="displayAcc()"> Switch Accounts </button>
-                <a class="noAccount" href="public/settings.html"> Settings </a>
-                <a href="public/signup.html" onclick="logOut()"> Log Out </a>
+            <div class="mobileNavigation">
+                <button onclick="accountsDropdown()"> Account </button>
+                <div id="mobileAccounts">
+                    <p id="usernameOutput"> </p>
+                    <hr width="100%" size="1">
+                    <button onclick="displayAcc()"> Switch Accounts </button>
+                    <a class="noAccount" href="public/settings.html"> Settings </a>
+                    <a href="public/signup.html" onclick="logOut()"> Log Out </a>
+                </div>
+                <button onclick="window.location.href='./public/index.html'"> Maker </button>
+                <button onclick="window.location.href='./public/backpack.html'"> Backpack </button>
             </div>
         </div>
 

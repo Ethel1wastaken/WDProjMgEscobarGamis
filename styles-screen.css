@@ -1,6 +1,17 @@
 @media (max-width: 1000px) {
+    html {
+        font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+        overflow: scroll;
+    }
+
+    body {
+        background-color: #ffeee9;
+        color: #3c113a;
+    }
+
     section {
         margin: 0 25px;
+        font-size: 0.75em;
     }
     
     .navbar {
@@ -34,15 +45,60 @@
     }
 
     #navSidebar {
+        position: fixed;
         height: 100%;
-        width: 100%;
-        z-index: 5;
+        width: 0;
+        top: 0;
+        right: 0;
+        z-index: 100;
         background-color: #ffaaea;
-        left: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        transition: .5s;
+    }
+
+    #navSidebar button.exit {
+        text-align: right;
+        background-color: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 30px;
+    }
+
+    #navSidebar button.exit:hover {
+        color: #991abf;
+        background-color: inherit;
+    }
+
+    div.mobileNavigation {
+        padding-top: 100px;
+    }
+
+    #navSidebar button {
+        width: 100%;
+        background-color: inherit;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 1.5em;
+        border: none;
+    }
+
+    #navSidebar button:hover {
+        background-color: #eca3da;
+    }
+
+    #mobileAccounts {
         display: none;
     }
 
-    .show {
+    .appear {
         display: block;
+    }
+
+    footer .socmed i {
+        position: relative;
+        top: 5px;
     }
 }
