@@ -1115,3 +1115,171 @@ footer section div p {
 footer section div {
     margin: 50px auto;
 }
+
+/* PATTERN CARDS - BACKPACK */
+
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 16px 0;
+}
+
+.pattern-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(60, 17, 58, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pattern-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #d02392;
+    box-shadow: 0 8px 24px rgba(208, 35, 146, 0.2);
+    transform: translateY(-4px);
+}
+
+/* NOT-HOVERED STATE */
+
+.pattern-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100px;
+    justify-content: space-between;
+}
+
+.pattern-card__thumbnail {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(60, 17, 58, 0.1);
+}
+
+.pattern-card__header .pattern-card__title--hovered,
+.pattern-card__header .pattern-card__date--hovered,
+.pattern-card__header .pattern-card__tags--hovered,
+.pattern-card__details {
+    display: none;
+}
+
+.pattern-card:hover .pattern-card__header {
+    display: none;
+}
+
+/* HOVERED STATE */
+
+.pattern-card:hover .pattern-card__details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* SHARED STYLES */
+
+.pattern-card__title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #3c113a;
+    margin: 0;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.pattern-card__title--hovered {
+    font-size: 18px;
+}
+
+.pattern-card__date {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.pattern-card__tags {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+.pattern-card__tags--not-hovered {
+    font-weight: 500;
+}
+
+.pattern-card__tags--hovered {
+    display: none;
+    font-weight: 500;
+}
+
+.pattern-card:hover .pattern-card__tags--hovered {
+    display: block;
+}
+
+.pattern-card__description {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+    display: none;
+}
+
+.pattern-card:hover .pattern-card__description {
+    display: block;
+}
+
+.pattern-card__username {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+    font-weight: 500;
+    display: none;
+}
+
+.pattern-card:hover .pattern-card__username {
+    display: block;
+}
+
+.pattern-card__btn {
+    background-color: #d02392;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: 8px;
+    display: none;
+}
+
+.pattern-card:hover .pattern-card__btn {
+    display: block;
+}
+
+.pattern-card__btn:hover {
+    background-color: #9e116a;
+    transform: scale(1.02);
+}
+
+.pattern-card__btn:active {
+    transform: scale(0.98);
+}
+
+/* DETAILS SECTION */
+
+.pattern-card__details {
+    flex-direction: column;
+    gap: 12px;
+}
