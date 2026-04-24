@@ -6,7 +6,13 @@ let usernameDisplay = document.getElementById("usernameOutput");
 
 console.log(currentAccount);
 
-usernameDisplay.innerHTML += currentAccount.username;
+if(currentAccount) {
+    usernameDisplay.innerHTML += currentAccount.username;
+}
+
+else {
+    usernameDisplay.innerHTML = "";
+}
 
 //DROPDOWN - DISPLAY
 function dropdown() {
@@ -75,6 +81,43 @@ function closeNavbar() {
     mobileDisplay.style.width = "0";
 }
 
-function accountsDropdown() {
-    mobileAccounts.classList.toggle("appear");
+//EVENT LISTENERS
+let accountBtn = document.getElementById("mobileBtn");
+let accountDropdown = document.getElementById("mobileAccounts");
+
+accountBtn.addEventListener("click", ()=>{
+    mobileAccounts.classList.toggle("display");
+})
+
+//MOBILE - DROPDOWN
+function mobileDisplayAcc() {
+    let popup = document.getElementById("mobileDialog");
+    
+    if(popup.open) {
+        popup.close();
+        return;
+    }
+
+    popup.innerHTML = "";
+
+    let activeacc = document.createElement("p");
+    activeacc.innerHTML = currentAccount.username;
+
+    activeacc.style.fontWeight = "bold";
+
+    popup.appendChild(activeacc);
+
+    for(let i in createdAccounts) {
+
+        if(createdAccounts[i].username != currentAccount.username) {
+            let accountButton = document.createElement("button");
+
+            accountButton.textContent += createdAccounts[i].username;
+            accountButton.setAttribute("onclick", "switchAccount(this)");
+
+            popup.appendChild(accountButton);
+        }
+    }
+
+    popup.show();
 }
