@@ -223,8 +223,9 @@ section {
 #featuredOutput button {
     color: #3c113a;
     position: absolute;
+    bottom: 30px;
+    right: 30px;
     padding: 5px;
-    right: 90px;
     background-color: #ffaaea;
     border: none;
     border-radius: 5px;
@@ -232,13 +233,13 @@ section {
     font-weight: bold;
     font-size: 1.05em;
     box-shadow: 10px 10px 10px #b570a3;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 #featuredOutput button:hover {
     background-color: #eca3da;
     transform: scale(1.1);
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 #featuredOutput button:active {
@@ -246,6 +247,7 @@ section {
     background-color: #eca3da;
     transform: translateX(10px) translateY(10px);
     box-shadow: none;
+    transition: all 0.3s ease;
 }
 
 #searchBar, #searchSection {

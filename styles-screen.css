@@ -9,6 +9,10 @@
         color: #3c113a;
     }
 
+    body:nth-child(2) {
+        padding-top: 50px;
+    }
+
     section {
         margin: 0 25px;
         font-size: 0.75em;
@@ -146,8 +150,20 @@
         color: #d02392;
     }
 
+    #featuredOutput button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+
     footer .socmed i {
         position: relative;
         top: 5px;
+    }
+}
+
+@media (min-width: 500px) {
+    .navbar {
+        height: 20vh;
     }
 }
